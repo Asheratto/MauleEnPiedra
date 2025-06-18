@@ -9,6 +9,7 @@ using System.Linq;
 using System.Timers;
 using UnityEngine;
 
+/*
 public enum Turn
 {
     Player,
@@ -20,7 +21,7 @@ public enum GameStateFlow
     Setup,
     InGame,
     EndGame
-}
+}*/
 
 
 public class SCR_Table : MonoBehaviour
@@ -88,14 +89,14 @@ public class SCR_Table : MonoBehaviour
                 if(currentTurn == Turn.Player && Player.lostTurn == false) 
                 {
                     //Permit
-                    //UnityEngine.Debug.Log("Juega Player ");
+                    UnityEngine.Debug.Log("Juega Player ");
                     Player.block = false;
                     Ai.block = true;
                     PlayerPet();
                 } 
                 else if(currentTurn == Turn.AI && Ai.lostTurn == false)
                 {
-                    //  UnityEngine.Debug.Log("Juega Ai");
+                    UnityEngine.Debug.Log("Juega Ai");
                     Player.block = true;
                     Ai.block = false;
                     WaitAndPlayAI();

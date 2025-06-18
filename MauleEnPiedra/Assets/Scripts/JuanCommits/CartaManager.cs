@@ -17,7 +17,9 @@ public enum CardZone
 public class CartaManager : MonoBehaviour
 {
     public GameObject cartaPrefab;
-    
+
+    public GameObject previewUI;
+
     public Transform[] slots;
     public Transform[] slotsPetro;
     public Transform[] slotsSpecial;
@@ -58,6 +60,13 @@ public class CartaManager : MonoBehaviour
         RectTransform cartaRT = cartaGO.GetComponent<RectTransform>();
         cartaRT.localPosition = Vector3.zero;
 
+        CartaZoom cz = cartaGO.GetComponentInChildren<CartaZoom>();
+        if (cz != null)
+        {
+            cz.cardData = card;
+            cz.previewUI = previewUI;
+        }
+
         yield return new WaitForSeconds(tiempoEntreCartas);
 
         Transform destino = toSlots[toIndex];
@@ -74,7 +83,7 @@ public class CartaManager : MonoBehaviour
             }
             
         }
-
+        
         if (fromSlots[fromIndex].childCount > 0)
         {
             

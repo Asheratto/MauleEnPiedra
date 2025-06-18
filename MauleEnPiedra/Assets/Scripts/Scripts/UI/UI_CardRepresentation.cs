@@ -14,17 +14,16 @@ public class UI_CardRepresentation : MonoBehaviour
 
     private void Start()
     {
-        if (CardData != null)
-            _img.sprite = CardData.image;
-        else
-            _img.enabled = false;
+        gameObject.SetActive(false);
     }
 
     public void SetCard(SO_Cards data)
     {
+        
         CardData = data;
         if (_img == null) _img = GetComponent<Image>();
-        _img.sprite = CardData.image;
         _img.enabled = true;
+        _img.sprite = CardData.image;
+       
     }
 }

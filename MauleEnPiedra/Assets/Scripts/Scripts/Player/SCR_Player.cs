@@ -61,31 +61,13 @@ public class SCR_Player : MonoBehaviour
         _indexprtect = indexTurn;
     }
 
-    public IEnumerator DoMulligan(Turn turn)
-    {
-        if (turn == Turn.Player)
-        {
-            Debug.Log("Open UI");
-        }
 
-        Debug.Log(name + " está eligiendo cartas para cambiar...");
-
-        yield return new WaitUntil(() => readySetup); // Aquí puedes mostrar UI real
-        //readySetup = false;
-    }
-
-    //RobarCarta
     public void DrawCard(SO_Cards card)
     {
         Debug.Log(name + " Robo Carta " + card.name);
 
 
         HandCards.Add(card);
-    }
-
-    public void CardsReady()
-    {
-        readySetup = true;
     }
 
 

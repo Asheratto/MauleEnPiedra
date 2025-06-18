@@ -1,16 +1,9 @@
 using System.Collections.Generic;
 using System;
 using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.Playables;
-using MC.Modelo;
-using System.Linq;
-using Microsoft.VisualBasic;
-using System.Diagnostics;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
+using System.Linq;
+using MC.Modelo;
 
 public static class MonteCarlo
     {
