@@ -8,7 +8,9 @@ namespace MC.Modelo
     
     //public enum
     public enum Zona { Zona1, Zona2, Zona3 }
-    public enum PartePetroglifo { Superior = 1, Media = 2, Inferior = 3 }
+    public enum NumPetroglifo { Primero = 1, Segundo = 2, Tercero = 3 }
+    public enum PartePetroglifo { Inferior = 1, Media = 2, Superior = 3 }
+    
 
     public class CardMC
     {
@@ -16,14 +18,16 @@ namespace MC.Modelo
         public string Name;
         public Card Type;
         public Zona Zona;
+        public NumPetroglifo numPetroglifo;
         public PartePetroglifo Parte;
 
-        public CardMC(int id, string name, Card type, Zona zona = Zona.Zona1, PartePetroglifo parte = PartePetroglifo.Superior)
+        public CardMC(int id, string name, Card type, Zona zona = Zona.Zona1, NumPetroglifo num = NumPetroglifo.Primero,PartePetroglifo parte = PartePetroglifo.Superior)
         {
             Id = id;
             Name = name;
             Type = type;
             Zona = zona;
+            numPetroglifo = num;
             Parte = parte;
         }
 

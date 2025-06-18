@@ -9,21 +9,6 @@ using System.Linq;
 using System.Timers;
 using UnityEngine;
 
-/*
-public enum Turn
-{
-    Player,
-    AI
-}
-
-public enum GameStateFlow
-{
-    Setup,
-    InGame,
-    EndGame
-}*/
-
-
 public class SCR_Table : MonoBehaviour
 {
 
@@ -34,14 +19,12 @@ public class SCR_Table : MonoBehaviour
     [SerializeField] private List<SO_Cards> DeckCard = new List<SO_Cards>();
     [SerializeField] private List<SO_Cards> _holeDeck = new List<SO_Cards>();
     [SerializeField] private CartaManager CardManager;
+    [SerializeField] private ControladorEscenas SceneManager;
+    [SerializeField] private SCR_CoroutineText TextManager;
 
     [SerializeField] private int turns = 0;
 
     public SCR_CoroutineQueue coroutineQueue;
-
-
-    //Player GameHand
-
 
     [SerializeField] private GameObject UICardsMulligan;
 
@@ -49,15 +32,15 @@ public class SCR_Table : MonoBehaviour
     private GameStateFlow currentGameState;
 
 
-   
+
     [SerializeField] private bool hasStartedTurn = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-        //LoadCards();
-        GameSetup();
+
+        //GameSetup();
+        GameSetupSpecific();
     }
 
     // Update is called once per frame
@@ -74,27 +57,27 @@ public class SCR_Table : MonoBehaviour
                 }
                 _holeDeck.Clear();
             }
-            if(Player.GetPoints() >= 3)
+            if (Player.GetPoints() >= 3)
             {
                 currentGameState = GameStateFlow.EndGame;
             }
             if (!hasStartedTurn)
             {
                 hasStartedTurn = true;
-                if (currentTurn == Turn.Player) {StartPlayerTurn();}
-                else { StartPlayerTurn();}
+                if (currentTurn == Turn.Player) { StartPlayerTurn(); }
+                else { StartPlayerTurn(); }
             }
             else
             {
-                if(currentTurn == Turn.Player && Player.lostTurn == false) 
+                if (currentTurn == Turn.Player && Player.lostTurn == false)
                 {
                     //Permit
                     UnityEngine.Debug.Log("Juega Player ");
                     Player.block = false;
                     Ai.block = true;
                     PlayerPet();
-                } 
-                else if(currentTurn == Turn.AI && Ai.lostTurn == false)
+                }
+                else if (currentTurn == Turn.AI && Ai.lostTurn == false)
                 {
                     UnityEngine.Debug.Log("Juega Ai");
                     Player.block = true;
@@ -109,7 +92,7 @@ public class SCR_Table : MonoBehaviour
 
         if (currentGameState == GameStateFlow.EndGame)
         {
-            UnityEngine.Debug.Log("Carga la siguiente pantalla");
+            SceneManager.CambiarEscena("Victoria");
         }
 
     }
@@ -118,7 +101,7 @@ public class SCR_Table : MonoBehaviour
     {
 
         int index = UnityEngine.Random.Range(0, DeckCard.Count);
-       
+
 
         if (turn == Turn.Player)
         {
@@ -142,7 +125,7 @@ public class SCR_Table : MonoBehaviour
                 if (insertIndex == -1)
                 {
                     insertIndex = hand.Count;
-                    hand.Add(null); 
+                    hand.Add(null);
                 }
 
                 coroutineQueue.Enqueue(CardManager.MoveCard(0, insertIndex, drawnCard, CardZone.Maze, CardZone.Hand, true, Turn.Player));
@@ -208,7 +191,14 @@ public class SCR_Table : MonoBehaviour
     {
         //Paso 1: Sortear turno
         currentTurn = (Turn)UnityEngine.Random.Range(0, 2);
-        
+        if (currentTurn == Turn.Player)
+        {
+            TextManager.MostrarTexto("Turno de Jugador");
+        }
+        else
+        {
+            TextManager.MostrarTexto("Turno de IA");
+        }
 
         //Paso 3: Dar cartas iniciales (ej. 3 para el que empieza, 4 para el otro)
         if (currentTurn == Turn.Player)
@@ -237,29 +227,60 @@ public class SCR_Table : MonoBehaviour
         currentGameState = GameStateFlow.InGame;
     }
 
-    private void LoadCards()
+    public void GameSetupSpecific()
     {
-        foreach (var card in _deckCard.petroglyphsCards)
+        currentTurn = Turn.Player;
+        if (currentTurn == Turn.Player)
         {
-            DeckCard.Add(card);
+            TextManager.MostrarTexto("Turno de Jugador");
         }
+        else
+        {
+            TextManager.MostrarTexto("Turno de IA");
+        }
+        DrawSpecificCard(Turn.AI, DeckCard[10]);
+        DrawSpecificCard(Turn.AI, DeckCard[10]);
+        DrawSpecificCard(Turn.AI, DeckCard[10]);
+        DrawSpecificCard(Turn.AI, DeckCard[10]);
+        DrawSpecificCard(Turn.AI, DeckCard[10]);
+        DrawSpecificCard(Turn.AI, DeckCard[10]);
+
+        DrawSpecificCard(Turn.Player, DeckCard[10]);
+        DrawSpecificCard(Turn.Player, DeckCard[10]);
+        DrawSpecificCard(Turn.Player, DeckCard[10]);
+        DrawSpecificCard(Turn.Player, DeckCard[10]);
+        DrawSpecificCard(Turn.Player, DeckCard[10]);
+        DrawSpecificCard(Turn.Player, DeckCard[10]);
+
+        currentGameState = GameStateFlow.InGame;
     }
 
     //Button Next 
     public void NextTurn()
     {
         currentTurn = (currentTurn == Turn.Player) ? Turn.AI : Turn.Player;
+        if (currentTurn == Turn.Player)
+        {
+            TextManager.MostrarTexto("Turno de Jugador");
+        }
+        else
+        {
+            TextManager.MostrarTexto("Turno de IA");
+        }
+
         turns++;
 
         if (Player.isProtect == true)
         {
             Player.indexProtect--;
-            if (Player.indexProtect == 0) {
+            if (Player.indexProtect == 0)
+            {
                 Player.isProtect = false;
                 Player.indexProtect = 2;
             }
         }
-        if (Ai.isProtect == true) {
+        if (Ai.isProtect == true)
+        {
 
             Ai.indexProtect--;
             if (Player.indexProtect == 0)
@@ -297,22 +318,16 @@ public class SCR_Table : MonoBehaviour
             if (!Scr_Rules.FullHand(Player.GetHand()))
             {
                 DrawRandomCard(Turn.Player);
-                //DrawSpecificCard(Turn.Player, DeckCard[0]);
             }
         }
-        else 
+        else
         {
             if (!Scr_Rules.FullHand(Ai.GetHand()))
             {
                 DrawRandomCard(Turn.AI);
-
+                //DrawSpecificCard(Turn.AI, DeckCard[10]);
             }
         }
-
-        
-
-        // Aquí puedes añadir otras lógicas si quieres que el jugador pueda realizar acciones, etc.
-        
     }
 
     private void PlayerPet()
@@ -323,7 +338,7 @@ public class SCR_Table : MonoBehaviour
             {
                 _holeDeck.Add(card);
             }
-           
+
             Player.PetroComplete();
             if (Player.isLock == false)
             {
@@ -334,7 +349,7 @@ public class SCR_Table : MonoBehaviour
             {
                 UnityEngine.Debug.Log("No suma puntos esta bloqueado");
             }
-            
+
         }
 
         if (Scr_Rules.PetroInComplete(Player.GetGroup()))
@@ -359,8 +374,8 @@ public class SCR_Table : MonoBehaviour
             }
 
             Ai.PetroComplete();
-            
-            if (Player.isLock == false) 
+
+            if (Player.isLock == false)
             {
                 Ai.AddPlayerPoints();
                 UnityEngine.Debug.Log("Suma Puntos");
@@ -369,7 +384,7 @@ public class SCR_Table : MonoBehaviour
             {
                 UnityEngine.Debug.Log("No suma puntos esta bloqueado");
             }
-            
+
         }
 
         if (Scr_Rules.PetroInComplete(Ai.GetGroup()))
@@ -384,13 +399,11 @@ public class SCR_Table : MonoBehaviour
         }
     }
 
-
     public bool StartCard(SO_Cards card)
     {
         //Carta Especiales Activas
         switch (card.Code)
         {
-            // Protege Turno Ready
             case 11:
                 if (currentTurn == Turn.Player)
                 {
@@ -398,14 +411,14 @@ public class SCR_Table : MonoBehaviour
                 }
                 else
                 {
-                    Ai.isProtect = true; 
+                    Ai.isProtect = true;
                 }
                 return true;
             // Bloquea Amenaza Esta carta es reactiva hacerla activa xdd Ets falta
-            case 12: 
+            case 12:
+            //Falta resolver
             // Saca Ultima Carta del pozo
             case 13:
-                UnityEngine.Debug.Log("13 Card");
                 if (currentTurn == Turn.Player)
                 {
                     if (Scr_Rules.FullHand(Player.GetHand()))
@@ -421,15 +434,20 @@ public class SCR_Table : MonoBehaviour
                     {
                         return false;
                     }
+                    if (_holeDeck.Count <= 0)
+                    {
+                        return false;
+                    }
+                    //El deck Hole no puede ser falso
                     var lastCard = _holeDeck[_holeDeck.Count - 1];
                     DrawSpecificCard(Turn.AI, lastCard);
                     _holeDeck.Remove(lastCard);
                     return Ai.HoleToHand(lastCard);
                 }
                 return false;
+
             //Cambia una carta con el contrincante. - Intercambio cultura;
             case 21: //
-                UnityEngine.Debug.Log("21 Card");
                 //Esta bug pero funcionando
                 var playerHand = Player.GetHand();
                 var aiHand = Ai.GetHand();
@@ -453,7 +471,7 @@ public class SCR_Table : MonoBehaviour
                 int randhandplayer = playerValidIndexes[UnityEngine.Random.Range(0, playerValidIndexes.Count)];
                 int randhandAI = aiValidIndexes[UnityEngine.Random.Range(0, aiValidIndexes.Count)];
 
-                if (Player.GetHand()[randhandplayer].Code == 21 || Ai.GetHand()[randhandAI].Code== 21)
+                if (Player.GetHand()[randhandplayer].Code == 21 || Ai.GetHand()[randhandAI].Code == 21)
                 {
                     return false;
                 }
@@ -467,9 +485,9 @@ public class SCR_Table : MonoBehaviour
 
                 // Jugar
                 return Player.OponentHand(cardAI) && Ai.OponentHand(cardPlayer);
+
             //Roba una carta del deck.
             case 22:
-                UnityEngine.Debug.Log("22 Card");
                 if (currentTurn == Turn.Player)
                 {
                     if (Scr_Rules.FullHand(Player.GetHand()))
@@ -491,7 +509,6 @@ public class SCR_Table : MonoBehaviour
                 return false;
             //Roba una carta aleatoria del la mano contraria.
             case 23:
-                UnityEngine.Debug.Log("23 Card");
                 if (currentTurn == Turn.Player)
                 {
                     if (Scr_Rules.FullHand(Player.GetHand()))
@@ -499,10 +516,10 @@ public class SCR_Table : MonoBehaviour
                         return false;
                     }
                     var opoHand = Ai.GetHand();
-                    var opovalidindex = Enumerable.Range(0, opoHand.Count).Where(i =>opoHand[i] != null).ToList();
+                    var opovalidindex = Enumerable.Range(0, opoHand.Count).Where(i => opoHand[i] != null).ToList();
                     if (opovalidindex.Count == 0)
-                    { 
-                        return false; 
+                    {
+                        return false;
                     }
                     int randhandop = opovalidindex[UnityEngine.Random.Range(0, opovalidindex.Count)];
                     var opocard = opoHand[randhandop];
@@ -528,7 +545,7 @@ public class SCR_Table : MonoBehaviour
                 }
                 return false;
             //Descarta una carta aleatoria del armado de petroglifo del contrincante 
-            case 31: 
+            case 31:
                 //
                 if (currentTurn == Turn.Player)
                 {
@@ -546,7 +563,7 @@ public class SCR_Table : MonoBehaviour
                     var opocard = opoHand[randhandop];
                     opoHand.Remove(opocard);
                     return Ai.DiscardGroup(opocard, randhandop);
-                    
+
                 }
                 else if (currentTurn == Turn.AI)
                 {
@@ -660,8 +677,6 @@ public class SCR_Table : MonoBehaviour
         return _holeDeck;
     }
 
-    //public float iaDelay = 2.0f; // tiempo de espera en segundos
-
     void WaitAndPlayAI()
     {
 
@@ -670,32 +685,31 @@ public class SCR_Table : MonoBehaviour
 
         foreach (var card in DeckCard)
         {
-            var _card = new CardMC(card.Code, card.name, card.type, card.zone, card.parte);
+            var _card = new CardMC(card.Code, card.name, card.type, card.zone, card.nump, card.parte);
             _maze.Add(_card);
         }
         foreach (var card in _holeDeck)
         {
-            var _card = new CardMC(card.Code, card.name, card.type, card.zone, card.parte);
+            var _card = new CardMC(card.Code, card.name, card.type, card.zone, card.nump, card.parte);
             _hole.Add(_card);
         }
-        
+
         List<CardMC> handp1 = new List<CardMC>();
         List<CardMC> handp2 = new List<CardMC>();
 
         foreach (var card in Player.GetHand())
         {
-            if(card == null)
+            if (card == null)
             {
                 continue;
             }
             else
             {
-                var _card = new CardMC(card.Code, card.name, card.type, card.zone, card.parte);
+                var _card = new CardMC(card.Code, card.name, card.type, card.zone, card.nump, card.parte);
                 handp1.Add(_card);
             }
-            
-        }
 
+        }
         foreach (var card in Ai.GetHand())
         {
             if (card == null)
@@ -704,7 +718,7 @@ public class SCR_Table : MonoBehaviour
             }
             else
             {
-                var _card = new CardMC(card.Code, card.name, card.type, card.zone, card.parte);
+                var _card = new CardMC(card.Code, card.name, card.type, card.zone, card.nump, card.parte);
                 handp2.Add(_card);
             }
 
@@ -721,7 +735,7 @@ public class SCR_Table : MonoBehaviour
             }
             else
             {
-                var _card = new CardMC(card.Code, card.name, card.type, card.zone, card.parte);
+                var _card = new CardMC(card.Code, card.name, card.type, card.zone, card.nump, card.parte);
                 handGroup1.Add(_card);
             }
 
@@ -735,7 +749,7 @@ public class SCR_Table : MonoBehaviour
             }
             else
             {
-                var _card = new CardMC(card.Code, card.name, card.type, card.zone, card.parte);
+                var _card = new CardMC(card.Code, card.name, card.type, card.zone, card.nump, card.parte);
                 handGroup2.Add(_card);
             }
 
@@ -752,7 +766,7 @@ public class SCR_Table : MonoBehaviour
             }
             else
             {
-                var _card = new CardMC(card.Code, card.name, card.type, card.zone, card.parte);
+                var _card = new CardMC(card.Code, card.name, card.type, card.zone, card.nump, card.parte);
                 handSpecial1.Add(_card);
             }
 
@@ -766,7 +780,7 @@ public class SCR_Table : MonoBehaviour
             }
             else
             {
-                var _card = new CardMC(card.Code, card.name, card.type, card.zone, card.parte);
+                var _card = new CardMC(card.Code, card.name, card.type, card.zone, card.nump, card.parte);
                 handSpecial1.Add(_card);
             }
 
@@ -780,11 +794,25 @@ public class SCR_Table : MonoBehaviour
         //yield return new WaitForSeconds(0.1f); // primero esperamos
 
         GameState state = new GameState(_maze, _hole, Turn.AI, p1, p2, end);
-        int index = MonteCarlo.MonteCarloTS(state, 2, 2).mejorJugada;
+        int index = MonteCarlo.MonteCarloTS(state, 2, 5).mejorJugada;
 
+        for(int i = 0; i < 6; i++)
+        {
+            if(index == i)
+            {   
+                if (Ai.GetHand()[i] != null)
+                {
+                    break;
+                    
+                }
+                index++;
+            }
+        }
+        UnityEngine.Debug.Log("Juega carta en posicion " + index);
         Ai.ClickHand(index);
 
-        //yield return new WaitForSeconds(1f);
+            //yield return new WaitForSeconds(1f);
+
         
     }
 }

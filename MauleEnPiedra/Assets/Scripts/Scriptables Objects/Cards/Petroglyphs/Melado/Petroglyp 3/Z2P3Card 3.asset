@@ -15,4 +15,7 @@ MonoBehaviour:
   name: Z2P3C3
   type: 0
   image: {fileID: 21300000, guid: 4346703224c99ef44bfebc3bca94a852, type: 3}
+  zone: 1
+  nump: 3
+  parte: 3
   Code: 6

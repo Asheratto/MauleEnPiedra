@@ -15,4 +15,7 @@ MonoBehaviour:
   name: Z1P1C1
   type: 0
   image: {fileID: 21300000, guid: 98c9fa73502150d40b295650df77cf3a, type: 3}
+  zone: 0
+  nump: 1
+  parte: 1
   Code: 1

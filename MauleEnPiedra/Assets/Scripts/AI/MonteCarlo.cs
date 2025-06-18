@@ -9,12 +9,15 @@ public static class MonteCarlo
     {
         public static (int puntaje, int mejorJugada) MonteCarloTS(GameState estado, int simulaciones, int profundidadMax, int profundidadActual = 0)
         {
+            //Evaluacion
             if (estado.JuegoTerminado || profundidadActual >= profundidadMax)
             {
                 int e = Evaluar(estado, false);
                 return (e, -1);
             }
 
+            
+            //Acciones disponible por carta
             var acciones = new List<Func<GameState, GameState>>();
             for (int i = 0; i < estado.Player2.Hand.Count; i++)
             {
@@ -76,6 +79,7 @@ public static class MonteCarlo
                 jugador.Hand.Add(estado.Deck[0]);
         }
 
+        //Revisa la carta jugada retorna true si es un movimiento válido y un false si no es válido
         private static bool JugarCartaEn(PlayerState bot, PlayerState oponente, GameState estado, int posiciondelacarta)
         {
             if (bot.Hand.Count == 0) return false;
@@ -251,25 +255,39 @@ public static class MonteCarlo
             }
             else if (carta.Type == Card.Petroglyph)
             {
+
                 //Console.WriteLine("Petro");
                 bot.ZoneArmado.Add(carta);
+                
+                var group = bot.ZoneArmado;
 
-                //Verifica que sean tres pero no estoy seguro de que hace
-                var grupos = bot.ZoneArmado.GroupBy(c => c.Zona).Where(g => g.Select(c => c.Parte).Distinct().Count() == 3);
-
-                foreach (var grupo in grupos)
-                {
-                    bot.Puntos++;
-                    Console.WriteLine("Se añade punto");
-                    foreach (var c in grupo.ToList()) bot.ZoneArmado.Remove(c);
+                if (group.Count > 3) {
+                    return false;
                 }
-            }
+                if (group.Count == 3)
+                {
+                    bool zonasiguales = group.All(c => c.Zona == group[0].Zona);
+                    bool petroglifosiguales = group.All(c => c.numPetroglifo == group[0].numPetroglifo);
+                    bool partesDistintas = group.Select(c => c.Parte).Distinct().Count() == group.Count;
 
+                    if (zonasiguales && petroglifosiguales && partesDistintas)
+                    {
+                        bot.Puntos++;
+                    }
+                    foreach (var card in group)
+                    {
+                        estado.DiscardPile.Add(card);
+                    }
+                    bot.ZoneArmado.Clear();
+                }
+                
+                return true;
+            }
             estado.DiscardPile.Add(carta);
             return true;
         }
 
-        //Simula turno aleatorio aqui hay que hacer la accion aleatoria del player
+        //Accion aleatoria del player
         public static GameState SimularTurno(GameState estado)
         {
             //Aqui juega el player aleatoriamente
@@ -297,15 +315,12 @@ public static class MonteCarlo
             RobarCarta(jugador, estado);
 
             // Si tiene cartas, jugar una aleatoria
-
             if (jugador.Hand.Count > 0)
             {
-                var rnd = new System.Random();
-
+                var rnd = new Random();
 
                 //Jugar cartas aleatorias
                 int numerocartas = rnd.Next(jugador.Hand.Count);
-
 
                 for (int i = 0; i < numerocartas; i++)
                 {
@@ -336,20 +351,18 @@ public static class MonteCarlo
             int puntaje = 0;
 
             // Peso de los puntos
-            puntaje += 10 * (jugadorActual.Puntos - oponente.Puntos);
+            puntaje += 200 * (jugadorActual.Puntos - oponente.Puntos);
 
             // Ejemplo: cantidad de cartas o piezas restantes
             puntaje += 2 * (jugadorActual.Hand.Count - oponente.Hand.Count);
 
             // Ejemplo: bonus si está por ganar
             if (jugadorActual.Puntos >= 3 - 1)
-                puntaje += 100;  // casi gana
+                puntaje += 2000;  // casi gana
 
             // Penalización si el oponente está cerca de ganar
             if (oponente.Puntos >= 3 - 1)
-                puntaje -= 100;
-
-            // Puedes añadir más factores como control de tablero, acciones especiales, combos, etc.
+                puntaje -= 2000;
 
             return puntaje;
         }

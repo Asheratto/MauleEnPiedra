@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\assets\\scripts\\scripts\\ui\\ui_cardrepresentation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scripts\\ui\\ui_cardrepresentation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|d:\\mep\\mauleenpiedra\\mauleenpiedra\\assets\\scripts\\scripts\\game\\scr_table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scripts\\game\\scr_table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\assets\\scripts\\juancommits\\cartazoom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\juancommits\\cartazoom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|d:\\mep\\mauleenpiedra\\mauleenpiedra\\assets\\scripts\\scripts\\ui\\scr_coroutinetext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scripts\\ui\\scr_coroutinetext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\assets\\scripts\\juancommits\\cartamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\juancommits\\cartamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\assets\\scripts\\enum\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enum\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\assets\\scripts\\ai\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ai\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\assets\\scripts\\scriptables objects\\so_cards.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,16 +23,32 @@
       "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ai\\montecarlo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\assets\\scripts\\ai\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ai\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\assets\\scripts\\scripts\\player\\scr_player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scripts\\player\\scr_player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\assets\\scripts\\juancommits\\cartaslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\juancommits\\cartaslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\assets\\scripts\\enum\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enum\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\assets\\scripts\\marcos\\controladorescenas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\marcos\\controladorescenas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\assets\\scripts\\juancommits\\cartamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\juancommits\\cartamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\assets\\scripts\\scripts\\ui\\ui_cardrepresentation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scripts\\ui\\ui_cardrepresentation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\assets\\scripts\\juancommits\\cartazoom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\juancommits\\cartazoom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,11 +58,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "SCR_CoroutineText.cs",
+              "DocumentMoniker": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\UI\\SCR_CoroutineText.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Scripts\\UI\\SCR_CoroutineText.cs",
+              "ToolTip": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\UI\\SCR_CoroutineText.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Scripts\\UI\\SCR_CoroutineText.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T20:03:19.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ControladorEscenas.cs",
+              "DocumentMoniker": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Marcos\\ControladorEscenas.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Marcos\\ControladorEscenas.cs",
+              "ToolTip": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Marcos\\ControladorEscenas.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Marcos\\ControladorEscenas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T14:03:20.817Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "CartaManager.cs",
               "DocumentMoniker": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\JuanCommits\\CartaManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\JuanCommits\\CartaManager.cs",
@@ -66,32 +99,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 10,
               "Title": "UI_CardRepresentation.cs",
               "DocumentMoniker": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\UI\\UI_CardRepresentation.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Scripts\\UI\\UI_CardRepresentation.cs",
               "ToolTip": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\UI\\UI_CardRepresentation.cs",
               "RelativeToolTip": "Assets\\Scripts\\Scripts\\UI\\UI_CardRepresentation.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAwBMAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAwBAAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T03:07:52.138Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T03:07:52.138Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "CartaZoom.cs",
               "DocumentMoniker": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\JuanCommits\\CartaZoom.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\JuanCommits\\CartaZoom.cs",
               "ToolTip": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\JuanCommits\\CartaZoom.cs",
               "RelativeToolTip": "Assets\\Scripts\\JuanCommits\\CartaZoom.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCkAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-05T03:06:16.424Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "GameState.cs",
               "DocumentMoniker": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Enum\\GameState.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enum\\GameState.cs",
@@ -103,74 +135,74 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
               "Title": "CartaSlot.cs",
               "DocumentMoniker": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\JuanCommits\\CartaSlot.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\JuanCommits\\CartaSlot.cs",
               "ToolTip": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\JuanCommits\\CartaSlot.cs",
               "RelativeToolTip": "Assets\\Scripts\\JuanCommits\\CartaSlot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwCIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-29T03:37:39.96Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "SCR_Player.cs",
               "DocumentMoniker": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\Player\\SCR_Player.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Scripts\\Player\\SCR_Player.cs",
               "ToolTip": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\Player\\SCR_Player.cs",
               "RelativeToolTip": "Assets\\Scripts\\Scripts\\Player\\SCR_Player.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAQwEgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADoAAAAAAAAAAAAQwE4AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-24T19:43:44.301Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "SCR_Table.cs",
               "DocumentMoniker": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\Game\\SCR_Table.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Scripts\\Game\\SCR_Table.cs",
               "ToolTip": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\Game\\SCR_Table.cs",
               "RelativeToolTip": "Assets\\Scripts\\Scripts\\Game\\SCR_Table.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAgwGkAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAN4AAAAAAAAAAAA4wPwAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-04T06:41:45.659Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "SO_Cards.cs",
               "DocumentMoniker": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scriptables Objects\\SO_Cards.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Scriptables Objects\\SO_Cards.cs",
               "ToolTip": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scriptables Objects\\SO_Cards.cs",
               "RelativeToolTip": "Assets\\Scripts\\Scriptables Objects\\SO_Cards.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-29T07:53:46.192Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "MonteCarlo.cs",
               "DocumentMoniker": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\AI\\MonteCarlo.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AI\\MonteCarlo.cs",
               "ToolTip": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\AI\\MonteCarlo.cs",
               "RelativeToolTip": "Assets\\Scripts\\AI\\MonteCarlo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABcBAAAAAAAAAAAuwGwBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-04T23:18:12.738Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "Model.cs",
               "DocumentMoniker": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\AI\\Model.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AI\\Model.cs",
               "ToolTip": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\AI\\Model.cs",
               "RelativeToolTip": "Assets\\Scripts\\AI\\Model.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAkwF0AAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-04T23:20:21.489Z"
             }
