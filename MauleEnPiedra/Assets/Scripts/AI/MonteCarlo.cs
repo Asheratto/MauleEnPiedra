@@ -10,7 +10,7 @@ public static class MonteCarlo
         public static (int puntaje, int mejorJugada) MonteCarloTS(GameState estado, int simulaciones, int profundidadMax, int profundidadActual = 0)
         {
             //Evaluacion
-            if (estado.JuegoTerminado || profundidadActual >= profundidadMax)
+            if (estado.Player2.Puntos >=3 || profundidadActual >= profundidadMax)
             {
                 int e = Evaluar(estado, false);
                 return (e, -1);
@@ -19,14 +19,66 @@ public static class MonteCarlo
             
             //Acciones disponible por carta
             var acciones = new List<Func<GameState, GameState>>();
-            for (int i = 0; i < estado.Player2.Hand.Count; i++)
+            int n = estado.Player2.Hand.Count;
+
+            // 1 carta
+            for (int i = 0; i < n; i++)
             {
-                int index = i;
-                acciones.Add(s => {
-                    JugarCartaEn(s.Player2, s.Player1, s, index);
+                int index1 = i;
+                acciones.Add(s =>
+                {
+                    JugarCartaEn(s.Player2, s.Player1, s, index1);
                     return s;
                 });
-            };
+            }
+
+            /*/ 2 cartas
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if (j == i) continue;
+                    int index1 = i;
+                    int index2 = j;
+
+                    acciones.Add(s =>
+                    {
+                        JugarCartaEn(s.Player2, s.Player1, s, index1);
+                        if (index2 > index1) index2--; // Ajustar si ya se removió una carta
+                        JugarCartaEn(s.Player2, s.Player1, s, index2);
+                        return s;
+                    });
+                }
+            }
+
+            // 3 cartas
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if (j == i) continue;
+                    for (int k = 0; k < n; k++)
+                    {
+                        if (k == i || k == j) continue;
+                        int index1 = i;
+                        int index2 = j;
+                        int index3 = k;
+
+                        acciones.Add(s =>
+                        {
+                            JugarCartaEn(s.Player2, s.Player1, s, index1);
+                            // Ajustamos los índices por las cartas que ya se han removido
+                            if (index2 > index1) index2--;
+                            JugarCartaEn(s.Player2, s.Player1, s, index2);
+                            if (index3 > Math.Max(index1, index2)) index3 -= 2;
+                            else if (index3 > Math.Min(index1, index2)) index3--;
+
+                            JugarCartaEn(s.Player2, s.Player1, s, index3);
+                            return s;
+                        });
+                    }
+                }
+            }*/
 
             int mejorPuntaje = int.MinValue;
             int mejorIndice = 0;
@@ -60,14 +112,6 @@ public static class MonteCarlo
 
             // En llamadas recursivas, solo interesa el puntaje
             return (mejorPuntaje, -1);
-        }
-
-        //Acciones que hacer La IA luego de evaluar esta parte es importante porque debe entender que accion es la mejor para hacer
-        public static GameState AplicarAccion(int index, GameState estado)
-        {
-
-            JugarCartaEn(estado.Player2, estado.Player1, estado, index);
-            return estado;
         }
 
         //Acciones y respuesta
@@ -174,7 +218,7 @@ public static class MonteCarlo
                 }
                 //
             }
-            else if (carta.Type == Card.Protect)
+            if (carta.Type == Card.Protect)
             {
                 if (carta.Id == 4) // Educacion patrimonial
                 {
@@ -205,7 +249,7 @@ public static class MonteCarlo
                     return false;
                 }
             }
-            else if (carta.Type == Card.Special)
+            if (carta.Type == Card.Special)
             {
                 if (carta.Id == 7)//Intecarmcio
                 {
@@ -253,10 +297,8 @@ public static class MonteCarlo
                     return false;
                 }
             }
-            else if (carta.Type == Card.Petroglyph)
+            if (carta.Type == Card.Petroglyph)
             {
-
-                //Console.WriteLine("Petro");
                 bot.ZoneArmado.Add(carta);
                 
                 var group = bot.ZoneArmado;
@@ -351,7 +393,7 @@ public static class MonteCarlo
             int puntaje = 0;
 
             // Peso de los puntos
-            puntaje += 200 * (jugadorActual.Puntos - oponente.Puntos);
+            puntaje += 5000 * (jugadorActual.Puntos - oponente.Puntos);
 
             // Ejemplo: cantidad de cartas o piezas restantes
             puntaje += 2 * (jugadorActual.Hand.Count - oponente.Hand.Count);
@@ -366,5 +408,7 @@ public static class MonteCarlo
 
             return puntaje;
         }
+
+        
     }
 

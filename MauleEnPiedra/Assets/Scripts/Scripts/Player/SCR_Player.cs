@@ -161,13 +161,12 @@ public class SCR_Player : MonoBehaviour
 
             HandCards[indexcard] = null;
             SpecialCards[insertIndex] = card;
-            if (table.StartCard(card))
-            {
+            if(table.StartCard(card)){
                 SpecialToD(card);
             }
             else
             {
-                Debug.Log("No se activo la carta " + card.name);
+                PlaySpeToHand(insertIndex);
             }
         }
         
@@ -224,7 +223,7 @@ public class SCR_Player : MonoBehaviour
         {
             if(SpecialCards[i] == card)
             {
-                table.coroutineQueue.Enqueue(cardManager.MoveCard(i, 0, card, CardZone.Special, CardZone.HoleMaze, false, MyTurn));
+                table.coroutineQueue.Enqueue(cardManager.MoveCard(i, 0, card, CardZone.Special, CardZone.HoleMaze, true, MyTurn, 1f, 0.5f));
                 break;
             }
         }
@@ -381,7 +380,15 @@ public class SCR_Player : MonoBehaviour
         {
             PlayCardToFromHand(index);
         }
-        
+    }
+
+    public float ClickHand(int index, float time)
+    {
+        if (block == false)
+        {
+            PlayCardToFromHand(index);
+        }
+        return time;
     }
 
     public void ClickPet(int index)

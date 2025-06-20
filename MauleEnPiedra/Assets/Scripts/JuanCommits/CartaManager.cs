@@ -33,9 +33,6 @@ public class CartaManager : MonoBehaviour
     public Transform[] reparto;
     public Transform[] holemaze;
 
-    public float tiempoEntreCartas = 0.1f;
-    public float duracionMovimiento = 0.1f;
-
     private void Awake()
     {
     }
@@ -46,7 +43,7 @@ public class CartaManager : MonoBehaviour
     
 
    
-    public IEnumerator MoveCard(int fromIndex, int toIndex, SO_Cards card, CardZone fromZone, CardZone toZone, bool isShowImage, Turn turn)
+    public IEnumerator MoveCard(int fromIndex, int toIndex, SO_Cards card, CardZone fromZone, CardZone toZone, bool isShowImage, Turn turn, float timeCards = 0.5f, float durationCard = 0.5f)
     {
         Transform[] fromSlots = GetSlotsByZone(fromZone, turn);
         Transform[] toSlots = GetSlotsByZone(toZone, turn);
@@ -67,13 +64,13 @@ public class CartaManager : MonoBehaviour
             cz.previewUI = previewUI;
         }
 
-        yield return new WaitForSeconds(tiempoEntreCartas);
+        yield return new WaitForSeconds(timeCards);
 
         Transform destino = toSlots[toIndex];
-        yield return StartCoroutine(Suavizado(cartaRT, destino));
+        yield return StartCoroutine(Suavizado(cartaRT, destino, durationCard));
         
         destino.GetComponent<CartaSlot>().setSoCard(card);
-        yield return new WaitForSeconds(tiempoEntreCartas);
+        yield return new WaitForSeconds(timeCards);
 
         if (cartaGO.transform.childCount > 0)
         {
@@ -121,7 +118,7 @@ public class CartaManager : MonoBehaviour
         return null;
     }
 
-    public IEnumerator Suavizado(RectTransform carta, Transform destino)
+    public IEnumerator Suavizado(RectTransform carta, Transform destino, float durationCard)
     {
         Vector3 inicio = carta.position;
         Vector3 final = destino.position;
@@ -131,7 +128,7 @@ public class CartaManager : MonoBehaviour
 
         while (t < 1f)
         {
-            t += Time.deltaTime / duracionMovimiento;
+            t += Time.deltaTime / durationCard;
             carta.position = Vector3.Lerp(inicio, final, t);
             yield return null;
         }

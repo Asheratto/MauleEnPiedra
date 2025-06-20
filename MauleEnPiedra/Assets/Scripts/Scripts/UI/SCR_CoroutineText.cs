@@ -8,17 +8,12 @@ public class SCR_CoroutineText : MonoBehaviour
     public float duracion = 2f; // duración total de la animación
     public float alturaMovimiento = 50f; // cuántos píxeles hacia arriba se mueve
 
-    public void MostrarTexto(string mensaje)
-    {
-        textoUI.text = mensaje;
-        textoUI.alpha = 0f;
-        textoUI.gameObject.SetActive(true);
-        StartCoroutine(AnimarTexto());
-    }
-
-    IEnumerator AnimarTexto()
+    public IEnumerator AnimarTexto(string mensaje)
     {
         float tiempo = 0f;
+        textoUI.alpha = 0f;
+        textoUI.text = mensaje;
+        textoUI.gameObject.SetActive(true);
         Vector3 posicionInicial = textoUI.rectTransform.anchoredPosition;
         Vector3 posicionFinal = posicionInicial + new Vector3(0, alturaMovimiento, 0);
 

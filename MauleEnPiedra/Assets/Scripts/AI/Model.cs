@@ -81,6 +81,8 @@ namespace MC.Modelo
         public PlayerState Player2 = new();
         public bool IsPlayer1Turn = true;
         public bool JuegoTerminado = false;
+        public int goodHand = 0;
+
 
         public GameState Clone()
         {
@@ -91,7 +93,9 @@ namespace MC.Modelo
                 Player1 = Player1.Clone(),
                 Player2 = Player2.Clone(),
                 IsPlayer1Turn = IsPlayer1Turn,
-                JuegoTerminado = JuegoTerminado
+                JuegoTerminado = JuegoTerminado,
+                goodHand = goodHand
+                
             };
         }
 
@@ -106,6 +110,7 @@ namespace MC.Modelo
             Player2 = player2;
             IsPlayer1Turn = currenTurn == Turn.Player ? true : false;
             JuegoTerminado = ended;
+            goodHand = 0;
         }
 
     }
