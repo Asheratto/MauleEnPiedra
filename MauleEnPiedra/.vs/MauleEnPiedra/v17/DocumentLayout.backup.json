@@ -7,23 +7,27 @@
       "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scripts\\game\\scr_table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\assets\\scripts\\scripts\\ui\\scr_coroutinequeue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scripts\\ui\\scr_coroutinequeue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\assets\\scripts\\scripts\\player\\scr_player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scripts\\player\\scr_player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|d:\\mep\\mauleenpiedra\\mauleenpiedra\\assets\\scripts\\juancommits\\cartamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\assets\\scripts\\juancommits\\cartamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\juancommits\\cartamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|d:\\mep\\mauleenpiedra\\mauleenpiedra\\assets\\scripts\\scripts\\player\\scr_player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scripts\\player\\scr_player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|d:\\mep\\mauleenpiedra\\mauleenpiedra\\assets\\scripts\\scripts\\ui\\scr_updatecards.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scripts\\ui\\scr_updatecards.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\assets\\scripts\\scripts\\ui\\scr_coroutinequeue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scripts\\ui\\scr_coroutinequeue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\assets\\scripts\\scripts\\ui\\scr_coroutinetext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scripts\\ui\\scr_coroutinetext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|d:\\mep\\mauleenpiedra\\mauleenpiedra\\assets\\scripts\\enum\\turn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\assets\\scripts\\enum\\turn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8B48203F-6CB2-580E-3995-74DFDEBDAC36}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enum\\turn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -50,11 +54,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
+              "Title": "SCR_UpdateCards.cs",
+              "DocumentMoniker": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\UI\\SCR_UpdateCards.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Scripts\\UI\\SCR_UpdateCards.cs",
+              "ToolTip": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\UI\\SCR_UpdateCards.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Scripts\\UI\\SCR_UpdateCards.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T22:00:23.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Button.cs",
               "DocumentMoniker": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Library\\PackageCache\\com.unity.ugui\\Runtime\\UGUI\\UI\\Core\\Button.cs",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.ugui\\Runtime\\UGUI\\UI\\Core\\Button.cs",
@@ -73,27 +90,27 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\JuanCommits\\CartaManager.cs",
               "ToolTip": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\JuanCommits\\CartaManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\JuanCommits\\CartaManager.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAYwC0AAAC8AAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwAYAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-20T20:24:46.644Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "SCR_Player.cs",
               "DocumentMoniker": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\Player\\SCR_Player.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Scripts\\Player\\SCR_Player.cs",
               "ToolTip": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\Player\\SCR_Player.cs",
               "RelativeToolTip": "Assets\\Scripts\\Scripts\\Player\\SCR_Player.cs",
-              "ViewState": "AgIAAPIAAAAAAAAAAAAlwE8BAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAFIBAAAAAAAAAAAvwG8BAABzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-20T16:37:38.944Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Turn.cs",
               "DocumentMoniker": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Enum\\Turn.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enum\\Turn.cs",
@@ -101,12 +118,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Enum\\Turn.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T16:35:38.857Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T16:35:38.857Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "SCR_CoroutineText.cs",
               "DocumentMoniker": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\UI\\SCR_CoroutineText.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Scripts\\UI\\SCR_CoroutineText.cs",
@@ -114,12 +130,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Scripts\\UI\\SCR_CoroutineText.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAqwAoAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T05:12:55.121Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T05:12:55.121Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "SCR_CoroutineQueue.cs",
               "DocumentMoniker": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\UI\\SCR_CoroutineQueue.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Scripts\\UI\\SCR_CoroutineQueue.cs",
@@ -127,8 +142,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Scripts\\UI\\SCR_CoroutineQueue.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAQwA4AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T05:09:42.742Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T05:09:42.742Z"
             },
             {
               "$type": "Document",
@@ -138,14 +152,14 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Scripts\\Game\\SCR_Table.cs",
               "ToolTip": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\Game\\SCR_Table.cs",
               "RelativeToolTip": "Assets\\Scripts\\Scripts\\Game\\SCR_Table.cs",
-              "ViewState": "AgIAAJoAAAAAAAAAAAAuwLIAAACPAAAAAAAAAA==",
+              "ViewState": "AgIAAP4AAAAAAAAAAAAmwCADAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-04T06:41:45.659Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "SO_Cards.cs",
               "DocumentMoniker": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scriptables Objects\\SO_Cards.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Scriptables Objects\\SO_Cards.cs",
@@ -153,12 +167,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Scriptables Objects\\SO_Cards.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T07:53:46.192Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-29T07:53:46.192Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "MonteCarlo.cs",
               "DocumentMoniker": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\AI\\MonteCarlo.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AI\\MonteCarlo.cs",
@@ -166,12 +179,11 @@
               "RelativeToolTip": "Assets\\Scripts\\AI\\MonteCarlo.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAA1wCcAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T23:18:12.738Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-04T23:18:12.738Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Model.cs",
               "DocumentMoniker": "D:\\MEP\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\AI\\Model.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AI\\Model.cs",

@@ -26,9 +26,16 @@ public class SCR_Table : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI pointPlayer;
     [SerializeField] private TextMeshProUGUI pointAI;
+
     [SerializeField] private TextMeshProUGUI turnActual;
     [SerializeField] private TextMeshProUGUI turnsText;
+
+    [SerializeField] private TextMeshProUGUI turnsProtect;
     [SerializeField] private TextMeshProUGUI turnsBlock;
+
+    [SerializeField] private TextMeshProUGUI turnsProtectAI;
+    [SerializeField] private TextMeshProUGUI turnsBlockAI;
+
 
     [SerializeField] private Button botonJugar;
 
@@ -78,6 +85,43 @@ public class SCR_Table : MonoBehaviour
                 hasStartedTurn = true;
                 if (currentTurn == Turn.Player) { StartPlayerTurn(); }
                 else { StartPlayerTurn(); }
+                if (Player.isProtect == true)
+                {
+                    Player.indexProtect++;
+                    if (Player.indexProtect == 1)
+                    {
+                        Player.isProtect = false;
+                        Player.indexProtect = 0;
+                    }
+                }
+                if (Ai.isProtect == true)
+                {
+
+                    Ai.indexProtect++;
+                    if (Ai.indexProtect == 1)
+                    {
+                        Ai.isProtect = false;
+                        Ai.indexProtect = 0;
+                    }
+                }
+                if (Player.isLock == true)
+                {
+                    Player.indexLock++;
+                    if (Player.indexLock == 2)
+                    {
+                        Player.isLock = false;
+                        Player.indexLock = 0;
+                    }
+                }
+                if (Ai.isLock == true)
+                {
+                    Ai.indexLock++;
+                    if (Ai.indexLock == 2)
+                    {
+                        Ai.isLock = false;
+                        Ai.indexLock = 0;
+                    }
+                }
             }
             else
             {
@@ -87,6 +131,7 @@ public class SCR_Table : MonoBehaviour
                     Player.block = false;
                     Ai.block = true;
                     PlayerPet();
+
                 }
                 else if (currentTurn == Turn.AI && Ai.lostTurn == false )
                 {
@@ -114,9 +159,14 @@ public class SCR_Table : MonoBehaviour
 
         pointAI.text = Ai.GetPoints().ToString();
         pointPlayer.text = Player.GetPoints().ToString();
-
+        
         turnsText.text = turns.ToString();
-        turnsBlock.text = turns.ToString();
+        
+        turnsProtect.text = Player.indexProtect.ToString();
+        turnsBlock.text = Player.indexLock.ToString();
+
+        turnsProtectAI.text = Ai.indexProtect.ToString();
+        turnsBlockAI.text = Ai.indexLock.ToString();
 
     }
 
@@ -188,6 +238,8 @@ public class SCR_Table : MonoBehaviour
         }
     }
 
+    //public OrderHand
+
     public void DrawSpecificCard(Turn turn, SO_Cards card)
     {
         if (turn == Turn.Player)
@@ -258,44 +310,7 @@ public class SCR_Table : MonoBehaviour
         }
         turns++;
 
-        if (Player.isProtect == true)
-        {
-            Player.indexProtect--;
-            if (Player.indexProtect == 0)
-            {
-                Player.isProtect = false;
-                Player.indexProtect = 2;
-            }
-        }
-        if (Ai.isProtect == true)
-        {
-
-            Ai.indexProtect--;
-            if (Ai.indexProtect == 0)
-            {
-                Ai.isProtect = false;
-                Ai.indexProtect = 2;
-            }
-        }
-        if (Player.isLock == true)
-        {
-            Player.indexLock--;
-            if (Player.indexLock == 0)
-            {
-                Player.isLock = false;
-                Player.indexLock = 1;
-            }
-        }
-        if (Ai.isLock == true)
-        {
-
-            Ai.indexLock--;
-            if (Ai.indexLock == 0)
-            {
-                Ai.isLock = false;
-                Ai.indexLock = 1;
-            }
-        }
+        
         hasStartedTurn = false;
     }
 
@@ -304,6 +319,43 @@ public class SCR_Table : MonoBehaviour
         if (currentTurn == Turn.Player){
             if (!Scr_Rules.FullHand(Player.GetHand())){
                 DrawRandomCard(Turn.Player);
+                if (Player.isProtect == true)
+                {
+                    Player.indexProtect++;
+                    if (Player.indexProtect == 1)
+                    {
+                        Player.isProtect = false;
+                        Player.indexProtect = 0;
+                    }
+                }
+                if (Ai.isProtect == true)
+                {
+
+                    Ai.indexProtect++;
+                    if (Ai.indexProtect == 1)
+                    {
+                        Ai.isProtect = false;
+                        Ai.indexProtect = 0;
+                    }
+                }
+                if (Player.isLock == true)
+                {
+                    Player.indexLock++;
+                    if (Player.indexLock == 2)
+                    {
+                        Player.isLock = false;
+                        Player.indexLock = 0;
+                    }
+                }
+                if (Ai.isLock == true)
+                {
+                    Ai.indexLock++;
+                    if (Ai.indexLock == 2)
+                    {
+                        Ai.isLock = false;
+                        Ai.indexLock = 0;
+                    }
+                }
             }
         }
         else{
@@ -801,6 +853,7 @@ public class SCR_Table : MonoBehaviour
 
         yield return new WaitForSeconds(5F);
         Ai.ClickHand(index);
+        Ai.OrderHand();
         NextTurn();
 
         botonJugar.interactable = true;

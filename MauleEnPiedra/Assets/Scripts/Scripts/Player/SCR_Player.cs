@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
@@ -44,9 +45,9 @@ public class SCR_Player : MonoBehaviour
     {
         block = false;
         isProtect = false;
-        indexProtect = 2;
-        indexLock = 1;
-        indexTurn = 1;
+        indexProtect = 0;
+        indexLock = 0;
+        indexTurn = 0;
         lostTurn = false;
         isLock = false;
     }
@@ -440,7 +441,50 @@ public class SCR_Player : MonoBehaviour
         return Poinst;
     }
 
-    
-    //Faltan las 10 reglas de las cartas
-    //Necesito las condiciones, que se muevan no es necesario
+    public void OrderHand()
+    {
+
+        int cardIndexToMove = 0; //A donde se mueve
+        int indexmove = 0;
+
+
+        foreach (var card in HandCards)
+        {
+            if (card != null)
+            {
+                //insertar elemento para insentarlo debemos tomar el indexcard que seria la nueva posicion
+                
+                if (MyTurn == Turn.Player)
+                {
+                    if(cardIndexToMove != indexmove)
+                    {
+                        table.coroutineQueue.Enqueue(cardManager.MoveCard(cardIndexToMove, indexmove, card, CardZone.Hand, CardZone.Hand, true, MyTurn));
+                    }
+                    
+                }
+                else if (MyTurn == Turn.AI)
+                {
+                    if (cardIndexToMove != indexmove)
+                    {
+                        table.coroutineQueue.Enqueue(cardManager.MoveCard(cardIndexToMove, indexmove, card, CardZone.Hand, CardZone.Hand, false, MyTurn));
+                    }
+                }
+                indexmove++;
+                cardIndexToMove++;
+            }
+            else
+            {
+                cardIndexToMove++;
+            }
+
+            Debug.Log("De donde viene " + cardIndexToMove);
+            Debug.Log("Para donde va " + indexmove);
+            
+            
+        }
+
+        HandCards = HandCards.Where(card => card != null).ToList();
+
+
+    }
 }
