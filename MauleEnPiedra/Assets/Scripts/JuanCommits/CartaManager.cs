@@ -11,7 +11,8 @@ public enum CardZone
     Special,
     Maze,
     HoleMaze,
-    ToG
+    ToG, 
+    HandOP
 }
 
 public class CartaManager : MonoBehaviour
@@ -43,7 +44,7 @@ public class CartaManager : MonoBehaviour
     
 
    
-    public IEnumerator MoveCard(int fromIndex, int toIndex, SO_Cards card, CardZone fromZone, CardZone toZone, bool isShowImage, Turn turn, float timeCards = 0.5f, float durationCard = 0.5f)
+    public IEnumerator MoveCard(int fromIndex, int toIndex, SO_Cards card, CardZone fromZone, CardZone toZone, bool isShowImage, Turn turn, float timeCards = 0.3f, float durationCard = 0.3f)
     {
         Transform[] fromSlots = GetSlotsByZone(fromZone, turn);
         Transform[] toSlots = GetSlotsByZone(toZone, turn);
@@ -101,6 +102,7 @@ public class CartaManager : MonoBehaviour
                     case CardZone.ToG: return AislotsToG;
                     case CardZone.Maze: return reparto;
                     case CardZone.HoleMaze: return holemaze;
+                    case CardZone.HandOP: return Aislots;
                     default: return null;
                 }
             case Turn.AI:
@@ -112,6 +114,7 @@ public class CartaManager : MonoBehaviour
                     case CardZone.ToG: return slotsToG;
                     case CardZone.Maze: return reparto;
                     case CardZone.HoleMaze: return holemaze;
+                    case CardZone.HandOP: return slots;
                     default: return null;
                 }
         }

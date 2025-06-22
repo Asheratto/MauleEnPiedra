@@ -85,6 +85,9 @@ public class SCR_Table : MonoBehaviour
                 hasStartedTurn = true;
                 if (currentTurn == Turn.Player) { StartPlayerTurn(); }
                 else { StartPlayerTurn(); }
+
+                //UnityEngine.Debug.Log("Player Protect " + Player.indexProtect);
+                
                 if (Player.isProtect == true)
                 {
                     Player.indexProtect++;
@@ -92,6 +95,24 @@ public class SCR_Table : MonoBehaviour
                     {
                         Player.isProtect = false;
                         Player.indexProtect = 0;
+                    }
+                }
+                if (Player.lostTurn == true)
+                {
+                    Player.indexTurn++;
+                    if (Player.indexTurn > 2)
+                    {
+                        Player.lostTurn = false;
+                        Player.indexTurn = 0;
+                    }
+                }
+                if (Ai.lostTurn == true)
+                {
+                    Ai.indexTurn++;
+                    if (Ai.indexTurn > 2)
+                    {
+                        Ai.lostTurn = false;
+                        Ai.indexTurn = 0;
                     }
                 }
                 if (Ai.isProtect == true)
@@ -127,16 +148,16 @@ public class SCR_Table : MonoBehaviour
             {
                 if (currentTurn == Turn.Player && Player.lostTurn == false)
                 {
-                    UnityEngine.Debug.Log("Juega Player ");
+                    //UnityEngine.Debug.Log("Juega Player ");
                     Player.block = false;
                     Ai.block = true;
                     PlayerPet();
 
                 }
-                else if (currentTurn == Turn.AI && Ai.lostTurn == false )
+                else if (currentTurn == Turn.AI && Ai.lostTurn == false)
                 {
                     botonJugar.interactable = false;
-                    UnityEngine.Debug.Log("Juega Ai");
+                    //UnityEngine.Debug.Log("Juega Ai");
                     Player.block = true;
                     Ai.block = false;
                     if (canIplay == true)
@@ -144,10 +165,9 @@ public class SCR_Table : MonoBehaviour
                         canIplay = false;
                         StartCoroutine(WaitAndPlayAI());
                     }
-                    
-                    PetAI();
-                    
-
+                }
+                else if (currentTurn == Turn.AI && Ai.lostTurn == true) { 
+                    NextTurn();
                 }
             }
         }
@@ -457,7 +477,6 @@ public class SCR_Table : MonoBehaviour
                         coroutineQueue.EnqueueText(TextManager.AnimarTexto("No se ha activado Museo Virtual"));
                         return false;
                     }
-                    DrawSpecificCard(Turn.Player, lastCard);
                     _holeDeck.Remove(lastCard);
                     coroutineQueue.EnqueueText(TextManager.AnimarTexto("Se ha activado Museo Virtual"));
                     return Player.HoleToHand(lastCard);
@@ -468,8 +487,6 @@ public class SCR_Table : MonoBehaviour
                         coroutineQueue.EnqueueText(TextManager.AnimarTexto("Se ha activado Museo Virtual"));
                         return false;
                     }
-                    
-                    DrawSpecificCard(Turn.AI, lastCard);
                     _holeDeck.Remove(lastCard);
                     coroutineQueue.EnqueueText(TextManager.AnimarTexto("Se ha activado Museo Virtual"));
                     return Ai.HoleToHand(lastCard);
@@ -489,7 +506,7 @@ public class SCR_Table : MonoBehaviour
                 }
 
                 // Filtrar solo cartas no nulas
-                var playerValidIndexes = Enumerable.Range(0, playerHand.Count).Where(i => playerHand[i] != null).ToList();
+                var playerValidIndexes = Enumerable.Range(0, playerHand.Count).Where(i => playerHand[i] != null).ToList(); // [1, 4, 5]
                 var aiValidIndexes = Enumerable.Range(0, aiHand.Count).Where(i => aiHand[i] != null).ToList();
 
                 // Verificar si hay al menos una carta válida
@@ -500,7 +517,7 @@ public class SCR_Table : MonoBehaviour
                 }
 
                 // Elegir una carta al azar de las válidas
-                int randhandplayer = playerValidIndexes[UnityEngine.Random.Range(0, playerValidIndexes.Count)];
+                int randhandplayer = playerValidIndexes[UnityEngine.Random.Range(0, playerValidIndexes.Count)]; //[4]
                 int randhandAI = aiValidIndexes[UnityEngine.Random.Range(0, aiValidIndexes.Count)];
 
                 if (Player.GetHand()[randhandplayer].Code == 21 || Ai.GetHand()[randhandAI].Code == 21)
@@ -509,16 +526,16 @@ public class SCR_Table : MonoBehaviour
                     return false;
                 }
 
-                var cardPlayer = playerHand[playerValidIndexes[randhandplayer]];
-                var cardAI = aiHand[aiValidIndexes[randhandAI]];
+                var cardPlayer = playerHand[randhandplayer]; 
+                var cardAI = aiHand[randhandAI];
 
                 // Remover las cartas
                 playerHand.Remove(cardPlayer);
                 aiHand.Remove(cardAI);
 
-                // Jugar
+                //Jugar
                 coroutineQueue.EnqueueText(TextManager.AnimarTexto("Intercambio cultural"));
-                return Player.OponentHand(cardAI) && Ai.OponentHand(cardPlayer);
+                return Player.OponentHand(cardAI, randhandAI) && Ai.OponentHand(cardPlayer, randhandplayer);
 
             //Roba una carta del deck.
             case 22:
@@ -566,7 +583,7 @@ public class SCR_Table : MonoBehaviour
                     var opocard = opoHand[randhandop];
                     opoHand.Remove(opocard);
                     coroutineQueue.EnqueueText(TextManager.AnimarTexto("Ladron de antiguedades"));
-                    return Player.OponentHand(opocard);
+                    return Player.OponentHand(opocard, randhandop);
                 }
                 else if (currentTurn == Turn.AI)
                 {
@@ -586,12 +603,12 @@ public class SCR_Table : MonoBehaviour
                     var opocard = opoHand[randhandop];
                     opoHand.Remove(opocard);
                     coroutineQueue.EnqueueText(TextManager.AnimarTexto("Ladron de antiguedades"));
-                    return Player.OponentHand(opocard);
+                    return Player.OponentHand(opocard, randhandop);
                 }
                 return false;
             //Descarta una carta aleatoria del armado de petroglifo del contrincante 
             case 31:
-                //
+                
                 if (currentTurn == Turn.Player)
                 {
                     if (Ai.isProtect)
@@ -599,19 +616,10 @@ public class SCR_Table : MonoBehaviour
                         coroutineQueue.EnqueueText(TextManager.AnimarTexto("Ha fallado la carta"));
                         return false;
                     }
-                    var opoHand = Ai.GetGroup();
-                    var opovalidindex = Enumerable.Range(0, opoHand.Count).Where(i => opoHand[i] != null).ToList();
-                    if (opovalidindex.Count == 0)
-                    {
-                        coroutineQueue.EnqueueText(TextManager.AnimarTexto("Ha fallado la carta"));
-                        return false;
-                    }
-                    int randhandop = opovalidindex[UnityEngine.Random.Range(0, opovalidindex.Count)];
-                    var opocard = opoHand[randhandop];
-                    opoHand.Remove(opocard);
+                    Ai.lostTurn = true;
                     coroutineQueue.EnqueueText(TextManager.AnimarTexto("Abandono"));
-                    return Ai.DiscardGroup(opocard, randhandop);
-
+                    return true;
+                    //var opoGro = Ai.GetGroup();
                 }
                 else if (currentTurn == Turn.AI)
                 {
@@ -620,20 +628,13 @@ public class SCR_Table : MonoBehaviour
                         coroutineQueue.EnqueueText(TextManager.AnimarTexto("Ha fallado la carta"));
                         return false;
                     }
-                    var opoHand = Player.GetGroup();
-                    var opovalidindex = Enumerable.Range(0, opoHand.Count).Where(i => opoHand[i] != null).ToList();
-                    if (opovalidindex.Count == 0)
-                    {
-                        coroutineQueue.EnqueueText(TextManager.AnimarTexto("Ha fallado la carta"));
-                        return false;
-                    }
-                    int randhandop = opovalidindex[UnityEngine.Random.Range(0, opovalidindex.Count)];
-                    var opocard = opoHand[randhandop];
-                    opoHand.Remove(opocard);
+                    Player.lostTurn = true;
                     coroutineQueue.EnqueueText(TextManager.AnimarTexto("Abandono"));
-                    return Player.DiscardGroup(opocard, randhandop);
+                    return true;
+                    //return Player.DiscardCardHand(opocard, randhandop);
                 }
-                return true;
+                coroutineQueue.EnqueueText(TextManager.AnimarTexto("Ha fallado la carta"));
+                return false;
             // Pierde una carta de la mano aleatoria 
             case 32:
                 if (currentTurn == Turn.Player)
@@ -682,6 +683,7 @@ public class SCR_Table : MonoBehaviour
                 return true;
             // El contrincante pierde un turno
             case 33:
+                //
                 if (currentTurn == Turn.Player)
                 {
                     if (Ai.isProtect)
@@ -689,10 +691,19 @@ public class SCR_Table : MonoBehaviour
                         coroutineQueue.EnqueueText(TextManager.AnimarTexto("Ha fallado la carta"));
                         return false;
                     }
-                    Ai.lostTurn = true;
+                    var opoHand = Ai.GetGroup();
+                    var opovalidindex = Enumerable.Range(0, opoHand.Count).Where(i => opoHand[i] != null).ToList();
+                    if (opovalidindex.Count == 0)
+                    {
+                        coroutineQueue.EnqueueText(TextManager.AnimarTexto("Ha fallado la carta"));
+                        return false;
+                    }
+                    int randhandop = opovalidindex[UnityEngine.Random.Range(0, opovalidindex.Count)];
+                    var opocard = opoHand[randhandop];
+                    opoHand.Remove(opocard);
                     coroutineQueue.EnqueueText(TextManager.AnimarTexto("Erosion"));
-                    return true;
-                    //var opoGro = Ai.GetGroup();
+                    return Ai.DiscardGroup(opocard, randhandop);
+
                 }
                 else if (currentTurn == Turn.AI)
                 {
@@ -701,13 +712,20 @@ public class SCR_Table : MonoBehaviour
                         coroutineQueue.EnqueueText(TextManager.AnimarTexto("Ha fallado la carta"));
                         return false;
                     }
-                    Player.lostTurn = true;
+                    var opoHand = Player.GetGroup();
+                    var opovalidindex = Enumerable.Range(0, opoHand.Count).Where(i => opoHand[i] != null).ToList();
+                    if (opovalidindex.Count == 0)
+                    {
+                        coroutineQueue.EnqueueText(TextManager.AnimarTexto("Ha fallado la carta"));
+                        return false;
+                    }
+                    int randhandop = opovalidindex[UnityEngine.Random.Range(0, opovalidindex.Count)];
+                    var opocard = opoHand[randhandop];
+                    opoHand.Remove(opocard);
                     coroutineQueue.EnqueueText(TextManager.AnimarTexto("Erosion"));
-                    return true;
-                    //return Player.DiscardCardHand(opocard, randhandop);
+                    return Player.DiscardGroup(opocard, randhandop);
                 }
-                coroutineQueue.EnqueueText(TextManager.AnimarTexto("Ha fallado la carta"));
-                return false;
+                return true;
             // El contrincante no suma puntos por petroglifo por un turno
             case 34:
                 if (currentTurn == Turn.Player)
@@ -851,11 +869,11 @@ public class SCR_Table : MonoBehaviour
         UnityEngine.Debug.Log(index);
         for(int i = 0; i < 6; i++) {if(index == i) { if (Ai.GetHand()[i] != null){ break; } index++; }}
 
-        yield return new WaitForSeconds(5F);
+        yield return new WaitForSeconds(3f);
         Ai.ClickHand(index);
+        PetAI();
         Ai.OrderHand();
         NextTurn();
-
         botonJugar.interactable = true;
     }
 }

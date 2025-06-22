@@ -293,7 +293,7 @@ public class SCR_Player : MonoBehaviour
         }
     }
 
-    public bool OponentHand(SO_Cards card)
+    public bool OponentHand(SO_Cards card, int randhand)
     {
         //No se mueve la carta
         if (Scr_Rules.FullHand(HandCards))
@@ -321,15 +321,13 @@ public class SCR_Player : MonoBehaviour
 
             if (MyTurn == Turn.Player)
             {
-                table.coroutineQueue.Enqueue(cardManager.MoveCard(0, insertIndex, card, CardZone.ToG, CardZone.Hand, true, Turn.Player));
+                table.coroutineQueue.Enqueue(cardManager.MoveCard(randhand, insertIndex, card, CardZone.HandOP, CardZone.Hand, true, Turn.Player, 0.5f, 0.5f));
             }
             else
             {
-                table.coroutineQueue.Enqueue(cardManager.MoveCard(0, insertIndex, card, CardZone.ToG, CardZone.Hand, false, Turn.AI));
+                table.coroutineQueue.Enqueue(cardManager.MoveCard(randhand, insertIndex, card, CardZone.HandOP, CardZone.Hand, false, Turn.AI, 0.5f, 0.5f));
             }
-
             HandCards[insertIndex] = card;
-            
         }
         return true;
     }
@@ -458,7 +456,7 @@ public class SCR_Player : MonoBehaviour
                 {
                     if(cardIndexToMove != indexmove)
                     {
-                        table.coroutineQueue.Enqueue(cardManager.MoveCard(cardIndexToMove, indexmove, card, CardZone.Hand, CardZone.Hand, true, MyTurn));
+                        table.coroutineQueue.Enqueue(cardManager.MoveCard(cardIndexToMove, indexmove, card, CardZone.Hand, CardZone.Hand, true, MyTurn, 0.1f, 0.1f));
                     }
                     
                 }
@@ -466,7 +464,7 @@ public class SCR_Player : MonoBehaviour
                 {
                     if (cardIndexToMove != indexmove)
                     {
-                        table.coroutineQueue.Enqueue(cardManager.MoveCard(cardIndexToMove, indexmove, card, CardZone.Hand, CardZone.Hand, false, MyTurn));
+                        table.coroutineQueue.Enqueue(cardManager.MoveCard(cardIndexToMove, indexmove, card, CardZone.Hand, CardZone.Hand, false, MyTurn, 0.1f, 0.1f));
                     }
                 }
                 indexmove++;
