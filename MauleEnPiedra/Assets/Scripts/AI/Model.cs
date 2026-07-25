@@ -2,120 +2,118 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace MC.Modelo
+
+//public enum
+public enum ZoneType { ZoneOne, ZoneTwo, ZoneThree }
+public enum PetroglyphNumber { FirstPetro, SecondPetro, ThirdFragment }
+public enum PetroglyphFragment { LowFragment, MidFragment, TopFragment}
+    
+
+//
+public class CardMC
 {
-    
-    
-    //public enum
-    public enum Zona { Zona1, Zona2, Zona3 }
-    public enum NumPetroglifo { Primero = 1, Segundo = 2, Tercero = 3 }
-    public enum PartePetroglifo { Inferior = 1, Media = 2, Superior = 3 }
-    
+    public int Id;
+    public string Name;
+    public CardType Type;
+    public ZoneType Zona;
+    public PetroglyphNumber numPetroglifo;
+    public PetroglyphFragment Parte;
 
-    public class CardMC
+    public CardMC(int id, string name, CardType type, ZoneType zona = ZoneType.ZoneOne, PetroglyphNumber num = PetroglyphNumber.FirstPetro,PetroglyphFragment parte = PetroglyphFragment.TopFragment)
     {
-        public int Id;
-        public string Name;
-        public Card Type;
-        public Zona Zona;
-        public NumPetroglifo numPetroglifo;
-        public PartePetroglifo Parte;
-
-        public CardMC(int id, string name, Card type, Zona zona = Zona.Zona1, NumPetroglifo num = NumPetroglifo.Primero,PartePetroglifo parte = PartePetroglifo.Superior)
-        {
-            Id = id;
-            Name = name;
-            Type = type;
-            Zona = zona;
-            numPetroglifo = num;
-            Parte = parte;
-        }
-
-
+        Id = id;
+        Name = name;
+        Type = type;
+        Zona = zona;
+        numPetroglifo = num;
+        Parte = parte;
     }
 
-    public class PlayerState
-    {
-        public List<CardMC> Hand = new();
-        public List<CardMC> ZoneArmado = new();
-        public List<CardMC> ZoneAccion = new();
-        public int Puntos = 0;
-        public int TurnosProtegido = 0;
-        public bool MuseoVirtual = false;
-        public bool PierdeTurno = false;
-
-        public PlayerState Clone()
-        {
-            return new PlayerState
-            {
-                Hand = new List<CardMC>(Hand),
-                ZoneArmado = new List<CardMC>(ZoneArmado),
-                ZoneAccion = new List<CardMC>(ZoneAccion),
-                Puntos = Puntos,
-                TurnosProtegido = TurnosProtegido,
-                PierdeTurno = PierdeTurno
-            };
-        }
-        public PlayerState()
-        {
-
-        }
-
-        public PlayerState(List<CardMC> hand, List<CardMC> group, List<CardMC> special, int point, int protect, bool museo, bool lost) 
-        {
-            Hand = hand;
-            ZoneArmado = group;
-            ZoneAccion = special;
-            Puntos = point;
-            TurnosProtegido = protect;
-            PierdeTurno = lost;
-        }
-    }
-
-    //Estado del juego esto es lo que se simula
-    public class GameState
-    {
-        public List<CardMC> Deck = new();
-        public List<CardMC> DiscardPile = new();
-        public PlayerState Player1 = new();
-        public PlayerState Player2 = new();
-        public bool IsPlayer1Turn = true;
-        public bool JuegoTerminado = false;
-        public int goodHand = 0;
-
-
-        public GameState Clone()
-        {
-            return new GameState
-            {
-                Deck = new List<CardMC>(Deck),
-                DiscardPile = new List<CardMC>(DiscardPile),
-                Player1 = Player1.Clone(),
-                Player2 = Player2.Clone(),
-                IsPlayer1Turn = IsPlayer1Turn,
-                JuegoTerminado = JuegoTerminado,
-                goodHand = goodHand
-                
-            };
-        }
-
-        public GameState() { }
-
-        public GameState(List<CardMC> Maze, List<CardMC> Discard, Turn currenTurn, PlayerState player1, PlayerState player2, bool ended)
-        {
-
-            Deck = new List<CardMC>(Maze);
-            DiscardPile = new List<CardMC>(DiscardPile);
-            Player1 = player1;
-            Player2 = player2;
-            IsPlayer1Turn = currenTurn == Turn.Player ? true : false;
-            JuegoTerminado = ended;
-            goodHand = 0;
-        }
-
-    }
-
-    
 
 }
+
+public class PlayerState
+{
+    public List<CardMC> Hand = new();
+    public List<CardMC> ZoneArmado = new();
+    public List<CardMC> ZoneAccion = new();
+    public int Puntos = 0;
+    public int TurnosProtegido = 0;
+    public bool MuseoVirtual = false;
+    public bool PierdeTurno = false;
+
+    public PlayerState Clone()
+    {
+        return new PlayerState
+        {
+            Hand = new List<CardMC>(Hand),
+            ZoneArmado = new List<CardMC>(ZoneArmado),
+            ZoneAccion = new List<CardMC>(ZoneAccion),
+            Puntos = Puntos,
+            TurnosProtegido = TurnosProtegido,
+            PierdeTurno = PierdeTurno
+        };
+    }
+    public PlayerState()
+    {
+
+    }
+
+    public PlayerState(List<CardMC> hand, List<CardMC> group, List<CardMC> special, int point, int protect, bool museo, bool lost) 
+    {
+        Hand = hand;
+        ZoneArmado = group;
+        ZoneAccion = special;
+        Puntos = point;
+        TurnosProtegido = protect;
+        PierdeTurno = lost;
+    }
+}
+
+
+public class GameState
+{
+    public List<CardMC> Deck = new();
+    public List<CardMC> DiscardPile = new();
+    public PlayerState Player1 = new();
+    public PlayerState Player2 = new();
+    public bool IsPlayer1Turn = true;
+    public bool JuegoTerminado = false;
+    public int goodHand = 0;
+
+
+    public GameState Clone()
+    {
+        return new GameState
+        {
+            Deck = new List<CardMC>(Deck),
+            DiscardPile = new List<CardMC>(DiscardPile),
+            Player1 = Player1.Clone(),
+            Player2 = Player2.Clone(),
+            IsPlayer1Turn = IsPlayer1Turn,
+            JuegoTerminado = JuegoTerminado,
+            goodHand = goodHand
+                
+        };
+    }
+
+    public GameState() { }
+
+    public GameState(List<CardMC> Maze, List<CardMC> Discard, Turn currenTurn, PlayerState player1, PlayerState player2, bool ended)
+    {
+
+        Deck = new List<CardMC>(Maze);
+        DiscardPile = new List<CardMC>(DiscardPile);
+        Player1 = player1;
+        Player2 = player2;
+        IsPlayer1Turn = currenTurn == Turn.Player ? true : false;
+        JuegoTerminado = ended;
+        goodHand = 0;
+    }
+
+}
+
+    
+
+
 

@@ -4,16 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum CardZone
-{
-    Hand,
-    Group,
-    Special,
-    Maze,
-    HoleMaze,
-    ToG, 
-    HandOP
-}
+
 
 public class CartaManager : MonoBehaviour
 {
@@ -44,7 +35,7 @@ public class CartaManager : MonoBehaviour
     
 
    
-    public IEnumerator MoveCard(int fromIndex, int toIndex, SO_Cards card, CardZone fromZone, CardZone toZone, bool isShowImage, Turn turn, float timeCards = 0.3f, float durationCard = 0.3f)
+    public IEnumerator MoveCard(int fromIndex, int toIndex, CardSO card, CardZone fromZone, CardZone toZone, bool isShowImage, Turn turn, float timeCards = 0.3f, float durationCard = 0.3f)
     {
         Transform[] fromSlots = GetSlotsByZone(fromZone, turn);
         Transform[] toSlots = GetSlotsByZone(toZone, turn);

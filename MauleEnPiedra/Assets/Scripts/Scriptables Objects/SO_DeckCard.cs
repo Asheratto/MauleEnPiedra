@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Deck", menuName = "SO/Deck")]
 public class SO_DeckCard : ScriptableObject
 {
-    public SO_Cards[] petroglyphsCards;
+    public CardSO[] petroglyphsCards;
 }

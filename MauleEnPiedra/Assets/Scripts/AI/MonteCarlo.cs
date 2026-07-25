@@ -1,9 +1,8 @@
 using System.Collections.Generic;
 using System;
 using Unity.VisualScripting;
-
 using System.Linq;
-using MC.Modelo;
+
 
 public static class MonteCarlo
     {
@@ -136,7 +135,7 @@ public static class MonteCarlo
             bot.Hand.RemoveAt(posiciondelacarta);
 
             //Aqui Estan las acciones realizadas
-            if (carta.Type == Card.Threath)
+            if (carta.Type == CardType.Threath)
             {
                 if (oponente.MuseoVirtual == true)
                 {
@@ -218,7 +217,7 @@ public static class MonteCarlo
                 }
                 //
             }
-            if (carta.Type == Card.Protect)
+            if (carta.Type == CardType.Protect)
             {
                 if (carta.Id == 4) // Educacion patrimonial
                 {
@@ -237,7 +236,7 @@ public static class MonteCarlo
                 if (carta.Id == 6)//Ley de patrimonio
                 {
                     //Console.WriteLine("Ley Pat");
-                    var ultima = estado.DiscardPile.LastOrDefault(c => c.Type == Card.Petroglyph);
+                    var ultima = estado.DiscardPile.LastOrDefault(c => c.Type == CardType.Petroglyph);
                     if (ultima != null)
                     {
                         estado.DiscardPile.Remove(ultima);
@@ -249,7 +248,7 @@ public static class MonteCarlo
                     return false;
                 }
             }
-            if (carta.Type == Card.Special)
+            if (carta.Type == CardType.Special)
             {
                 if (carta.Id == 7)//Intecarmcio
                 {
@@ -297,7 +296,7 @@ public static class MonteCarlo
                     return false;
                 }
             }
-            if (carta.Type == Card.Petroglyph)
+            if (carta.Type == CardType.Petroglyph)
             {
                 bot.ZoneArmado.Add(carta);
                 

@@ -16,7 +16,7 @@ public static class Scr_Rules
     }
     
     //La mano esta llena no se pueden agregar mas cartas
-    public static bool FullHand(List<SO_Cards> list)
+    public static bool FullHand(List<CardSO> list)
     {
         if (list == null) return false;
 
@@ -24,7 +24,7 @@ public static class Scr_Rules
         if (list.Count < 6) return false;
 
         // Si alguna carta es null, tampoco está llena
-        foreach (SO_Cards card in list)
+        foreach (CardSO card in list)
         {
             if (card == null) return false;
         }
@@ -33,7 +33,7 @@ public static class Scr_Rules
     }
 
     // El grupo esta lleno por lo tanto no se puede jugar la carta
-    public static bool FullGroup(List<SO_Cards> list)
+    public static bool FullGroup(List<CardSO> list)
     {
         if (list == null) return false;
 
@@ -41,7 +41,7 @@ public static class Scr_Rules
         if (list.Count < 3) return false;
 
         // Si alguna carta es null, tampoco está llena
-        foreach (SO_Cards card in list)
+        foreach (CardSO card in list)
         {
             if (card == null) return false;
         }
@@ -49,7 +49,7 @@ public static class Scr_Rules
         return true; // Si tiene 6 cartas no nulas
     }
 
-    public static bool FullSpecial(List<SO_Cards> list)
+    public static bool FullSpecial(List<CardSO> list)
     {
         if (list == null) return false;
 
@@ -57,7 +57,7 @@ public static class Scr_Rules
         if (list.Count < 2) return false;
 
         // Si alguna carta es null, tampoco está llena
-        foreach (SO_Cards card in list)
+        foreach (CardSO card in list)
         {
             if (card == null) return false;
         }
@@ -65,7 +65,7 @@ public static class Scr_Rules
         return true; // Si tiene 6 cartas no nulas
     }
 
-    public static bool PetroComplete(List<SO_Cards> list)
+    public static bool PetroComplete(List<CardSO> list)
     {
         if (list == null || list.Count != 3)
             return false;
@@ -73,12 +73,12 @@ public static class Scr_Rules
         if (list.Any(card => card == null))
             return false;
 
-        int code = list[0].Code;
+        int code = list[0].id;
 
-        return list.All(card => card.Code == code);
+        return list.All(card => card.id == code);
     }
 
-    public static bool PetroInComplete(List<SO_Cards> list)
+    public static bool PetroInComplete(List<CardSO> list)
     {
         if (list == null || list.Count != 3)
             return false;

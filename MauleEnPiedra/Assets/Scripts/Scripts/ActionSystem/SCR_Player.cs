@@ -10,9 +10,9 @@ using UnityEngine;
 public class SCR_Player : MonoBehaviour
 {
 
-    [SerializeField] private List<SO_Cards> HandCards = new List<SO_Cards>();
-    [SerializeField] private List<SO_Cards> SpecialCards = new List<SO_Cards>();
-    [SerializeField] private List<SO_Cards> GroupCards = new List<SO_Cards>();
+    [SerializeField] private List<CardSO> HandCards = new List<CardSO>();
+    [SerializeField] private List<CardSO> SpecialCards = new List<CardSO>();
+    [SerializeField] private List<CardSO> GroupCards = new List<CardSO>();
     [SerializeField] private SCR_Table table;
     [SerializeField] private CartaManager cardManager;
     [SerializeField] private int Poinst = 0;
@@ -20,7 +20,7 @@ public class SCR_Player : MonoBehaviour
     
     [SerializeField] Turn MyTurn;
 
-    [SerializeField] public bool block { get; set; }
+    public bool block { get; set; }
 
     [SerializeField] private bool _isprtect = false;
     [SerializeField] private bool _islockt = false;
@@ -30,12 +30,12 @@ public class SCR_Player : MonoBehaviour
     [SerializeField] private int _indexlock;
     [SerializeField] private int _indexlosttiur;
     //Rules
-    [SerializeField] public bool isProtect { get; set; }
-    [SerializeField] public int indexProtect { get; set; }
-    [SerializeField] public bool lostTurn { get; set; }
-    [SerializeField] public int indexTurn { get; set; }
-    [SerializeField] public bool isLock { get; set; }
-    [SerializeField] public int indexLock { get; set; }
+    public bool isProtect { get; set; }
+    public int indexProtect { get; set; }
+    public bool lostTurn { get; set; }
+    public int indexTurn { get; set; }
+    public bool isLock { get; set; }
+    public int indexLock { get; set; }
     public bool IsReadySetup()
     {
         return readySetup;
@@ -63,7 +63,7 @@ public class SCR_Player : MonoBehaviour
     }
 
 
-    public void DrawCard(SO_Cards card)
+    public void DrawCard(CardSO card)
     {
         Debug.Log(name + " Robo Carta " + card.name);
 
@@ -72,17 +72,17 @@ public class SCR_Player : MonoBehaviour
     }
 
 
-    public List<SO_Cards> GetHand()
+    public List<CardSO> GetHand()
     {
         return HandCards;
     }
 
-    public List<SO_Cards> GetGroup()
+    public List<CardSO> GetGroup()
     {
         return GroupCards;
     }
 
-    public List<SO_Cards> GetSpe()
+    public List<CardSO> GetSpe()
     {
         return SpecialCards;
     }
@@ -97,7 +97,7 @@ public class SCR_Player : MonoBehaviour
         if (card == null)
             return;
 
-        if (card.type == Card.Petroglyph)
+        if (card.type == CardType.Petroglyph)
         {
             if (Scr_Rules.FullGroup(GroupCards))
                 return;
@@ -186,7 +186,7 @@ public class SCR_Player : MonoBehaviour
 
         var card = GroupCards[indexcard];
 
-        if (card != null && card.type == Card.Petroglyph)
+        if (card != null && card.type == CardType.Petroglyph)
         {
             int insertIndex = -1;
             for (int i = 0; i < HandCards.Count; i++)
@@ -218,7 +218,7 @@ public class SCR_Player : MonoBehaviour
         }
     }
     
-    public void SpecialToD(SO_Cards card)
+    public void SpecialToD(CardSO card)
     {
         for(int i = 0;i < SpecialCards.Count; i++)
         {
@@ -234,7 +234,7 @@ public class SCR_Player : MonoBehaviour
         
     }
 
-    public bool DiscardGroup(SO_Cards card, int index)
+    public bool DiscardGroup(CardSO card, int index)
     {
         table.coroutineQueue.Enqueue(cardManager.MoveCard(index, 0, card, CardZone.Group, CardZone.HoleMaze, false, MyTurn));
         table.GetHole().Add(card);
@@ -242,7 +242,7 @@ public class SCR_Player : MonoBehaviour
         return true;
     }
 
-    public bool DiscardCardHand(SO_Cards card, int index)
+    public bool DiscardCardHand(CardSO card, int index)
     {
         table.coroutineQueue.Enqueue(cardManager.MoveCard(index, 0, card, CardZone.Hand, CardZone.HoleMaze, false, MyTurn));
         table.GetHole().Add(card);
@@ -261,7 +261,7 @@ public class SCR_Player : MonoBehaviour
         }
         var card = SpecialCards[indexcard];
 
-        if (card != null && card.type != Card.Petroglyph)
+        if (card != null && card.type != CardType.Petroglyph)
         {
             int insertIndex = -1;
             for (int i = 0; i < HandCards.Count; i++)
@@ -293,7 +293,7 @@ public class SCR_Player : MonoBehaviour
         }
     }
 
-    public bool OponentHand(SO_Cards card, int randhand)
+    public bool OponentHand(CardSO card, int randhand)
     {
         //No se mueve la carta
         if (Scr_Rules.FullHand(HandCards))
@@ -332,7 +332,7 @@ public class SCR_Player : MonoBehaviour
         return true;
     }
 
-    public bool HoleToHand(SO_Cards card)
+    public bool HoleToHand(CardSO card)
     {
         //No se mueve la carta
         if (Scr_Rules.FullHand(HandCards))

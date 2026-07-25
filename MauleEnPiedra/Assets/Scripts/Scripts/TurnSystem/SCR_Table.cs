@@ -1,4 +1,3 @@
-using MC.Modelo;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using System;
@@ -18,8 +17,8 @@ public class SCR_Table : MonoBehaviour
     [SerializeField] private SCR_Player Player;
     [SerializeField] private SCR_Player Ai;
     [SerializeField] private SO_DeckCard _deckCard;
-    [SerializeField] private List<SO_Cards> DeckCard = new List<SO_Cards>();
-    [SerializeField] private List<SO_Cards> _holeDeck = new List<SO_Cards>();
+    [SerializeField] private List<CardSO> DeckCard = new List<CardSO>();
+    [SerializeField] private List<CardSO> _holeDeck = new List<CardSO>();
     [SerializeField] private CartaManager CardManager;
     [SerializeField] private ControladorEscenas SceneManager;
     [SerializeField] private SCR_CoroutineText TextManager;
@@ -200,10 +199,10 @@ public class SCR_Table : MonoBehaviour
         {
             if (!Scr_Rules.FullHand(Player.GetHand()))
             {
-                SO_Cards drawnCard = DeckCard[index];
+                CardSO drawnCard = DeckCard[index];
                 DeckCard.Remove(drawnCard);
 
-                List<SO_Cards> hand = Player.GetHand();
+                List<CardSO> hand = Player.GetHand();
                 int insertIndex = -1;
 
                 for (int i = 0; i < hand.Count; i++)
@@ -230,10 +229,10 @@ public class SCR_Table : MonoBehaviour
         {
             if (!Scr_Rules.FullHand(Ai.GetHand()))
             {
-                SO_Cards drawnCard = DeckCard[index];
+                CardSO drawnCard = DeckCard[index];
                 DeckCard.Remove(drawnCard);
 
-                List<SO_Cards> hand = Ai.GetHand();
+                List<CardSO> hand = Ai.GetHand();
                 int insertIndex = -1;
 
                 for (int i = 0; i < hand.Count; i++)
@@ -260,7 +259,7 @@ public class SCR_Table : MonoBehaviour
 
     //public OrderHand
 
-    public void DrawSpecificCard(Turn turn, SO_Cards card)
+    public void DrawSpecificCard(Turn turn, CardSO card)
     {
         if (turn == Turn.Player)
         {
@@ -446,10 +445,10 @@ public class SCR_Table : MonoBehaviour
         }
     }
 
-    public bool StartCard(SO_Cards card)
+    public bool StartCard(CardSO card)
     {
         //Carta Especiales Activas
-        switch (card.Code)
+        switch (card.id)
         {
             case 11:
                 if (currentTurn == Turn.Player)
@@ -520,7 +519,7 @@ public class SCR_Table : MonoBehaviour
                 int randhandplayer = playerValidIndexes[UnityEngine.Random.Range(0, playerValidIndexes.Count)]; //[4]
                 int randhandAI = aiValidIndexes[UnityEngine.Random.Range(0, aiValidIndexes.Count)];
 
-                if (Player.GetHand()[randhandplayer].Code == 21 || Ai.GetHand()[randhandAI].Code == 21)
+                if (Player.GetHand()[randhandplayer].id == 21 || Ai.GetHand()[randhandAI].id == 21)
                 {
                     coroutineQueue.EnqueueText(TextManager.AnimarTexto("Ha fallado la carta"));
                     return false;
@@ -758,7 +757,7 @@ public class SCR_Table : MonoBehaviour
         return false;
     }
 
-    public List<SO_Cards> GetHole()
+    public List<CardSO> GetHole()
     {
         return _holeDeck;
     }
@@ -776,12 +775,12 @@ public class SCR_Table : MonoBehaviour
 
         foreach (var card in DeckCard)
         {
-            var _card = new CardMC(card.Code, card.name, card.type, card.zone, card.nump, card.parte);
+            var _card = new CardMC(card.id, card.name, card.type, card.zone, card.nump, card.parte);
             _maze.Add(_card);
         }
         foreach (var card in _holeDeck)
         {
-            var _card = new CardMC(card.Code, card.name, card.type, card.zone, card.nump, card.parte);
+            var _card = new CardMC(card.id, card.name, card.type, card.zone, card.nump, card.parte);
             _hole.Add(_card);
         }
         foreach (var card in Player.GetHand())
@@ -792,7 +791,7 @@ public class SCR_Table : MonoBehaviour
             }
             else
             {
-                var _card = new CardMC(card.Code, card.name, card.type, card.zone, card.nump, card.parte);
+                var _card = new CardMC(card.id, card.name, card.type, card.zone, card.nump, card.parte);
                 handp1.Add(_card);
             }
 
@@ -805,7 +804,7 @@ public class SCR_Table : MonoBehaviour
             }
             else
             {
-                var _card = new CardMC(card.Code, card.name, card.type, card.zone, card.nump, card.parte);
+                var _card = new CardMC(card.id, card.name, card.type, card.zone, card.nump, card.parte);
                 handp2.Add(_card);
             }
 
@@ -818,7 +817,7 @@ public class SCR_Table : MonoBehaviour
             }
             else
             {
-                var _card = new CardMC(card.Code, card.name, card.type, card.zone, card.nump, card.parte);
+                var _card = new CardMC(card.id, card.name, card.type, card.zone, card.nump, card.parte);
                 handGroup1.Add(_card);
             }
 
@@ -831,7 +830,7 @@ public class SCR_Table : MonoBehaviour
             }
             else
             {
-                var _card = new CardMC(card.Code, card.name, card.type, card.zone, card.nump, card.parte);
+                var _card = new CardMC(card.id, card.name, card.type, card.zone, card.nump, card.parte);
                 handGroup2.Add(_card);
             }
 
@@ -844,7 +843,7 @@ public class SCR_Table : MonoBehaviour
             }
             else
             {
-                var _card = new CardMC(card.Code, card.name, card.type, card.zone, card.nump, card.parte);
+                var _card = new CardMC(card.id, card.name, card.type, card.zone, card.nump, card.parte);
                 handSpecial1.Add(_card);
             }
 
@@ -854,7 +853,7 @@ public class SCR_Table : MonoBehaviour
             if (card == null){
                 continue;}
             else{
-                var _card = new CardMC(card.Code, card.name, card.type, card.zone, card.nump, card.parte);
+                var _card = new CardMC(card.id, card.name, card.type, card.zone, card.nump, card.parte);
                 handSpecial1.Add(_card);
             }
         }

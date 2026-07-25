@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(Image))]
 public class CartaZoom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public SO_Cards cardData;
+    public CardSO cardData;
     public GameObject previewUI;
     public float previewScale = 1.2f;
 

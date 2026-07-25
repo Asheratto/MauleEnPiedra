@@ -4,7 +4,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class UI_CardRepresentation : MonoBehaviour
 {
-    [HideInInspector] public SO_Cards CardData;
+    [HideInInspector] public CardSO CardData;
     private Image _img;
 
     private void Awake()
@@ -17,7 +17,7 @@ public class UI_CardRepresentation : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void SetCard(SO_Cards data)
+    public void SetCard(CardSO data)
     {
         
         CardData = data;

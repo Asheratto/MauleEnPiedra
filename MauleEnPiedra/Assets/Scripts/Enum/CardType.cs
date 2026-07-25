@@ -1,7 +1,6 @@
 using UnityEngine;
 
-
-public enum Card{
+public enum CardType{
     Petroglyph,
     Protect,
     Special,

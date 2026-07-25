@@ -7,7 +7,7 @@ public class CartaSlot : MonoBehaviour
 {
 
     //sprivate GameObject card;
-    [SerializeField] private SO_Cards cardData;
+    [SerializeField] private CardSO cardData;
     private Button myButton;
 
     void Start()
@@ -37,7 +37,7 @@ public class CartaSlot : MonoBehaviour
         
     }
 
-    public void setSoCard(SO_Cards card)
+    public void setSoCard(CardSO card)
     {
         cardData = card;
     }
