@@ -3,36 +3,47 @@ using UnityEngine;
 
 //Esta clase maneja directamente los turnos de los personajes
 //Quien maneja quien empieza
+//No maneja eventos ni nada solo maneja a quien le toca, cuando empieza y cuando termina el turno para cambiar de player
 public class TurnManager
 {
-    private List<IPlayerController> players;
+    private List<Player> players;
 
     private int currentPlayerIndex;
 
-    //La lista de player no es player controller...
-    public IPlayerController CurrentPlayer => players[currentPlayerIndex];
+    public Player CurrentPlayer => players[currentPlayerIndex];
 
     public TurnPhase phase;
 
     
+    public TurnManager(List<Player> players, int firstPlayer)
+    {
+        this.players = players;
+        this.currentPlayerIndex = firstPlayer;
+    }
+
 
     public void StartTurn()
     {
         phase = TurnPhase.Start;
 
         Debug.Log(
-            $"Turno de {CurrentPlayer}"
+            $"Turno de {CurrentPlayer} + {CurrentPlayer.controller}"
         );
-
         StartMainPhase();
     }
 
 
+    
     private void StartMainPhase()
     {
         phase = TurnPhase.Main;
 
-        CurrentPlayer.TakeTurn();
+        /*/ICommand action = CurrentPlayer.Controller.GetAction(gameState);
+
+        if (action != null)
+        {
+            action.Execute();
+        }*/
     }
 
 
@@ -56,8 +67,5 @@ public class TurnManager
         StartTurn();
     }
 
-    public void InitializeTurn(int i)
-    {
-        currentPlayerIndex = i;
-    }
 }
+

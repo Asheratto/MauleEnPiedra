@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\monsa\\onedrive\\documentos\\github\\mauleenpiedra\\mauleenpiedra\\assets\\scripts\\scripts\\turnsystem\\turnmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scripts\\turnsystem\\turnmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\monsa\\onedrive\\documentos\\github\\mauleenpiedra\\mauleenpiedra\\assets\\scripts\\scripts\\game\\gameloop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scripts\\game\\gameloop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\monsa\\onedrive\\documentos\\github\\mauleenpiedra\\mauleenpiedra\\assets\\scripts\\scripts\\playercontroller\\aiplayercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scripts\\playercontroller\\aiplayercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\monsa\\onedrive\\documentos\\github\\mauleenpiedra\\mauleenpiedra\\assets\\scripts\\scripts\\turnsystem\\turnmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scripts\\turnsystem\\turnmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\monsa\\onedrive\\documentos\\github\\mauleenpiedra\\mauleenpiedra\\assets\\scripts\\scripts\\playercontroller\\humanplayercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,24 +19,20 @@
       "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scripts\\playercontroller\\iplayercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\monsa\\onedrive\\documentos\\github\\mauleenpiedra\\mauleenpiedra\\assets\\scripts\\scripts\\game\\gameloop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scripts\\game\\gameloop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\monsa\\onedrive\\documentos\\github\\mauleenpiedra\\mauleenpiedra\\assets\\scripts\\scripts\\playercontroller\\aiplayercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scripts\\playercontroller\\aiplayercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\monsa\\onedrive\\documentos\\github\\mauleenpiedra\\mauleenpiedra\\assets\\scripts\\scripts\\playercontroller\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scripts\\playercontroller\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\monsa\\onedrive\\documentos\\github\\mauleenpiedra\\mauleenpiedra\\assets\\scripts\\scripts\\actionsystem\\commands\\endturn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scripts\\actionsystem\\commands\\endturn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\monsa\\onedrive\\documentos\\github\\mauleenpiedra\\mauleenpiedra\\assets\\scripts\\ai\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ai\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\monsa\\onedrive\\documentos\\github\\mauleenpiedra\\mauleenpiedra\\assets\\scripts\\scripts\\actionsystem\\commands\\drawcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scripts\\actionsystem\\commands\\drawcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\monsa\\onedrive\\documentos\\github\\mauleenpiedra\\mauleenpiedra\\assets\\scripts\\scripts\\actionsystem\\icommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scripts\\actionsystem\\icommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\monsa\\onedrive\\documentos\\github\\mauleenpiedra\\mauleenpiedra\\assets\\scripts\\scripts\\actionsystem\\playeractions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scripts\\actionsystem\\playeractions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\monsa\\onedrive\\documentos\\github\\mauleenpiedra\\mauleenpiedra\\assets\\scripts\\scripts\\turnsystem\\turnstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,21 +58,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AIPlayerController.cs",
-              "DocumentMoniker": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\PlayerController\\AIPlayerController.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Scripts\\PlayerController\\AIPlayerController.cs",
-              "ToolTip": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\PlayerController\\AIPlayerController.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Scripts\\PlayerController\\AIPlayerController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-25T14:58:23.106Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -85,7 +68,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Scripts\\PlayerController\\HumanPlayerController.cs",
               "ToolTip": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\PlayerController\\HumanPlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\Scripts\\PlayerController\\HumanPlayerController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-25T14:56:44.694Z",
               "EditorCaption": ""
@@ -98,20 +81,20 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Scripts\\PlayerController\\IPlayerController.cs",
               "ToolTip": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\PlayerController\\IPlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\Scripts\\PlayerController\\IPlayerController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-25T14:35:42.66Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "GameLoop.cs",
               "DocumentMoniker": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\Game\\GameLoop.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Scripts\\Game\\GameLoop.cs",
               "ToolTip": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\Game\\GameLoop.cs",
               "RelativeToolTip": "Assets\\Scripts\\Scripts\\Game\\GameLoop.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwDAAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-25T14:16:32.342Z",
               "EditorCaption": ""
@@ -124,14 +107,27 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Scripts\\PlayerController\\Player.cs",
               "ToolTip": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\PlayerController\\Player.cs",
               "RelativeToolTip": "Assets\\Scripts\\Scripts\\PlayerController\\Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-26T15:01:06.009Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 4,
+              "Title": "AIPlayerController.cs",
+              "DocumentMoniker": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\PlayerController\\AIPlayerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Scripts\\PlayerController\\AIPlayerController.cs",
+              "ToolTip": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\PlayerController\\AIPlayerController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Scripts\\PlayerController\\AIPlayerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-25T14:58:23.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "CardView.cs",
               "DocumentMoniker": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scriptables Objects\\Cards\\CardBeaviours\\CardView.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Scriptables Objects\\Cards\\CardBeaviours\\CardView.cs",
@@ -143,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "CardType.cs",
               "DocumentMoniker": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Enum\\CardType.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enum\\CardType.cs",
@@ -155,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "CardSO.cs",
               "DocumentMoniker": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scriptables Objects\\CardSO.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Scriptables Objects\\CardSO.cs",
@@ -169,63 +165,50 @@
         },
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "EndTurn.cs",
-              "DocumentMoniker": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\ActionSystem\\Commands\\EndTurn.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Scripts\\ActionSystem\\Commands\\EndTurn.cs",
-              "ToolTip": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\ActionSystem\\Commands\\EndTurn.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Scripts\\ActionSystem\\Commands\\EndTurn.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-29T22:58:56.602Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "DrawCard.cs",
-              "DocumentMoniker": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\ActionSystem\\Commands\\DrawCard.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Scripts\\ActionSystem\\Commands\\DrawCard.cs",
-              "ToolTip": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\ActionSystem\\Commands\\DrawCard.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Scripts\\ActionSystem\\Commands\\DrawCard.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Title": "PlayerActions.cs",
+              "DocumentMoniker": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\ActionSystem\\PlayerActions.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Scripts\\ActionSystem\\PlayerActions.cs",
+              "ToolTip": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\ActionSystem\\PlayerActions.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Scripts\\ActionSystem\\PlayerActions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-29T22:46:17.649Z",
+              "WhenOpened": "2026-07-25T14:54:09.642Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ICommand.cs",
-              "DocumentMoniker": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\ActionSystem\\ICommand.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Scripts\\ActionSystem\\ICommand.cs",
-              "ToolTip": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\ActionSystem\\ICommand.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Scripts\\ActionSystem\\ICommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAXAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Model.cs",
+              "DocumentMoniker": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\AI\\Model.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\AI\\Model.cs",
+              "ToolTip": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\AI\\Model.cs",
+              "RelativeToolTip": "Assets\\Scripts\\AI\\Model.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAGwAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-29T22:45:46.761Z",
+              "WhenOpened": "2026-07-25T14:37:08.531Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "TurnManager.cs",
               "DocumentMoniker": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\TurnSystem\\TurnManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Scripts\\TurnSystem\\TurnManager.cs",
               "ToolTip": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\TurnSystem\\TurnManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Scripts\\TurnSystem\\TurnManager.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCgAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwBEAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-25T14:08:47.201Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "TurnState.cs",
               "DocumentMoniker": "C:\\Users\\monsa\\OneDrive\\Documentos\\GitHub\\MauleEnPiedra\\MauleEnPiedra\\Assets\\Scripts\\Scripts\\TurnSystem\\TurnState.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Scripts\\TurnSystem\\TurnState.cs",
@@ -233,7 +216,8 @@
               "RelativeToolTip": "Assets\\Scripts\\Scripts\\TurnSystem\\TurnState.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-25T14:12:41.586Z"
+              "WhenOpened": "2026-07-25T14:12:41.586Z",
+              "EditorCaption": ""
             }
           ]
         }
